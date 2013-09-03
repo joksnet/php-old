@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+<application>
+  <db>
+    <adapter>MySQLi</adapter>
+    <hostname>localhost</hostname>
+    <username>root</username>
+    <password></password>
+    <database>aix</database>
+  </db>
+</application>
+<development extends="application">
+  <db>
+    <database>aixdev</database>
+  </db>
+</development>
+</config>
