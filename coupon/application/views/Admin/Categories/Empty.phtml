@@ -1,0 +1,15 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/categories' => __('Categories'), '/admin/categories/empty' => __('Empty'))); ?>
+
+<p><?php echo __('Are you sure you want to delete <strong>all</strong> categories?'); ?></p>
+
+<form action="<?php echo new Url('/admin/categories/empty'); ?>" method="post">
+  <dl>
+    <dd class="submit">
+      <input type="submit" value="<?php echo __('Empty'); ?>" />
+      <span><?php echo __('or'); ?></span>
+      <a href="<?php echo new Url('/admin/categories'); ?>"><?php echo __('Cancel'); ?></a>
+    </dd>
+  </dl>
+</form>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

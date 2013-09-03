@@ -1,0 +1,31 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/businesses' => __('Businesses'))); ?>
+
+<p><strong>+</strong> <a href="<?php echo new Url('/admin/businesses/add'); ?>"><?php echo __('Create a new business'); ?></a></p>
+
+<table cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th><?php echo __('Name'); ?></th>
+      <th><?php echo __('Categories'); ?></th>
+      <th><?php echo __('Country'); ?></th>
+      <th><?php echo __('Active'); ?></th>
+      <th><?php echo __('Actions'); ?></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+<?php echo Controller::dispatch('Helpers_Pagination', 0, 0); ?>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td colspan="5" class="error">
+        <p><?php echo __('You haven\'t created any businesses yet. Create a business using the link above.'); ?></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

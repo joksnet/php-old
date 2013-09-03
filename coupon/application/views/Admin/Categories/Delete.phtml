@@ -1,0 +1,15 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/categories' => __('Categories'), "/admin/categories/{$this->category->id}" => $this->category->name, "/admin/categories/{$this->category->id}/delete" => __('Delete'))); ?>
+
+<p><?php echo __('Are you sure you want to delete <strong>$0</strong> category?', $this->category->name); ?></p>
+
+<form action="<?php echo new Url("/admin/categories/{$this->category->id}/delete"); ?>" method="post">
+  <dl>
+    <dd class="submit">
+      <input type="submit" value="<?php echo __('Delete'); ?>" />
+      <span><?php echo __('or'); ?></span>
+      <a href="<?php echo new Url("/admin/categories/{$this->category->id}"); ?>"><?php echo __('Cancel'); ?></a>
+    </dd>
+  </dl>
+</form>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

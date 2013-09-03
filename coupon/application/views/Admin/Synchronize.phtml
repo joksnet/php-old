@@ -1,0 +1,15 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/synchronize' => __('Synchronize'))); ?>
+
+<div class="info">
+  <p><?php echo __('Synchronization success.') ?></p>
+</div>
+
+<?php if ( $this->models ) : ?>
+<ul>
+<?php foreach ( $this->models as $model ) : ?>
+  <li><?php echo $model; ?></li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

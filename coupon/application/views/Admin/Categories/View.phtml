@@ -1,0 +1,30 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/categories' => __('Categories'), "/admin/categories/{$this->category->id}" => $this->category->name)); ?>
+
+<p><?php echo $this->category->name; ?></p>
+
+<ul class="actions">
+  <li><a href="<?php echo new Url("/admin/categories/{$this->category->id}/edit"); ?>"><?php echo __('Edit'); ?></a></li>
+  <li><a href="<?php echo new Url("/admin/categories/{$this->category->id}/delete"); ?>" class="delete" id="delete"><?php echo __('Delete'); ?></a></li>
+</ul>
+
+<script type="text/javascript">
+//<![CDATA[
+document.getElementById('delete').onclick = function( event )
+{
+    if ( confirm('<?php echo __('Are you sure you want to delete this category?'); ?>') )
+    {
+        var form = document.createElement('form');
+
+        document.body.appendChild(form);
+
+        form.action = '<?php echo new Url("/admin/categories/{$this->category->id}/delete"); ?>';
+        form.method = 'post';
+        form.submit();
+    }
+
+    event.preventDefault();
+};
+//]]>
+</script>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

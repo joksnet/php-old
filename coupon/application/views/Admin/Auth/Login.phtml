@@ -1,0 +1,45 @@
+<?php
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "\n";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title><?php echo __('Login'); ?></title>
+  <style type="text/css">
+    body { font: 13px/1.231 Arial, sans-serif; }
+    dl { width: 280px; margin: 100px auto; padding: 20px; background-color: #efefef; border: 1px solid #cdcdcd; }
+    dl dt { width: 80px; float: left; line-height: 25px; }
+    dl dd { margin-left: 90px; padding-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<form action="<?php echo new Url(); ?>" method="post">
+  <dl>
+    <dt>
+      <label for="user"><?php echo __('Username'); ?></label>
+    </dt>
+    <dd>
+      <input type="text" name="user" id="user" value="" />
+    </dd>
+
+    <dt>
+      <label for="pass"><?php echo __('Password'); ?></label>
+    </dt>
+    <dd>
+      <input type="password" name="pass" id="pass" />
+    </dd>
+
+    <dd class="submit">
+      <input type="submit" value="<?php echo __('Login'); ?>" />
+      <span><?php echo __('or'); ?></span>
+      <a href="<?php echo new Url('/'); ?>"><?php echo __('Cancel'); ?></a>
+    </dd>
+  </dl>
+</form>
+
+</body>
+</html>

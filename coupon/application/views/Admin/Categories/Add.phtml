@@ -1,0 +1,27 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/categories' => __('Categories'), '/admin/categories/add' => __('Add'))); ?>
+
+<?php if ( Request::getInstance()->getQuery('error') ) : ?>
+<div class="error">
+  <p><?php echo __('All fields marked with <span class="required">*</span> must be completed.'); ?></p>
+</div>
+<?php endif; ?>
+
+<form action="" method="post">
+  <dl>
+    <dt>
+      <label for="name"><?php echo __('Name'); ?></label>
+      <span class="required">*</span>
+    </dt>
+    <dd>
+      <input type="text" name="name" id="name" value="<?php echo $this->name; ?>" />
+    </dd>
+
+    <dd class="submit">
+      <input type="submit" value="<?php echo __('Create a new category'); ?>" />
+      <span><?php echo __('or'); ?></span>
+      <a href="<?php echo new Url('/admin/categories'); ?>"><?php echo __('Cancel'); ?></a>
+    </dd>
+  </dl>
+</form>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>

@@ -1,0 +1,170 @@
+<?php echo Controller::dispatch('Admin_Helpers_Header', array('/admin/businesses' => __('Businesses'), '/admin/businesses/add' => __('Add'))); ?>
+
+<?php if ( Request::getInstance()->getQuery('error') ) : ?>
+<div class="error">
+  <p><?php echo __('All fields marked with <span class="required">*</span> must be completed.'); ?></p>
+</div>
+<?php endif; ?>
+
+<form action="" method="post">
+  <dl>
+    <dt><label for="key"><?php echo __('Key'); ?></label></dt>
+    <dd><input type="text" name="key" id="key" value="" /></dd>
+
+    <dt>
+      <label for="name"><?php echo __('Name'); ?></label>
+      <span class="required">*</span>
+    </dt>
+    <dd>
+      <input type="text" name="name" id="name" value="" />
+    </dd>
+
+    <dt>
+      <label for="category_0"><?php echo __('Categories'); ?></label>
+      &mdash; <a href="#category" id="category"><?php echo __('Add'); ?></a>
+      <span id="category_error" style="display: none;">&mdash; <?php echo __('Category already selected.'); ?></span>
+    </dt>
+    <dd>
+<?php if ( $this->categories ) : ?>
+      <ol id="categories">
+        <li>
+          <select name="category_0" id="category_0">
+            <option value="" disabled="disabled" selected="selected"><?php echo __('Categories'); ?></option>
+            <option value="" disabled="disabled">--</option>
+<?php foreach ( $this->categories as $category ) : ?>
+            <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+<?php endforeach; ?>
+          </select>
+        </li>
+      </ol>
+      <input type="hidden" name="categories_count" id="categories_count" value="1" />
+      <script type="text/javascript">
+      //<![CDATA[
+        document.getElementById('category').onclick = function( event )
+        {
+            var original = document.getElementById('category_0');
+
+            if ( original )
+            {
+                var count = document.getElementById('categories_count');
+                var next = parseInt(count.value);
+
+                var category = original.cloneNode(true);
+                    category.id = 'category_' + next;
+                    category.name = 'category_' + next;
+                    category.onchange = original.onchange;
+
+                var li = document.createElement('li');
+                    li.appendChild(category);
+
+                document.getElementById('categories')
+                        .appendChild(li);
+
+                count.value = next + 1;
+            }
+
+            event.preventDefault();
+        };
+
+        document.getElementById('category_0').onchange = function( event )
+        {
+            var target = event.target || event.srcElement;
+            var target_id = target.options[target.selectedIndex].value;
+
+            var count = parseInt(document.getElementById('categories_count').value);
+            var found = false;
+
+            for ( var i = 0; i < count; i++ )
+            {
+                var category = document.getElementById('category_' + i);
+                var category_id = category.options[category.selectedIndex].value;
+
+                if ( !( category.id == target.id ) && category_id == target_id )
+                {
+                    found = true; break;
+                }
+            }
+
+            if ( found )
+            {
+                target.selectedIndex = 0;
+
+                var error = document.getElementById('category_error');
+                    error.style.display = 'inline';
+
+                setTimeout(function() { error.style.display = 'none'; }, 1500);
+            }
+        };
+      //]]>
+      </script>
+<?php else : ?>
+      <p><?php echo __('You haven\'t created any categories yet.'); ?></p>
+<?php endif; ?>
+    </dd>
+
+    <dt>
+      <label><?php echo __('Address'); ?></label>
+      <span class="required">*</span>
+    </dt>
+    <dd>
+      <dl>
+        <dt><label for="address_addr1"><?php echo __('1st line'); ?></label></dt>
+        <dd><input type="text" name="address_addr1" id="address_addr1" value="" /></dd>
+
+        <dt><label for="address_addr2"><?php echo __('2nd line'); ?></label></dt>
+        <dd><input type="text" name="address_addr2" id="address_addr2" value="" /></dd>
+
+        <dt><label for="address_addr3"><?php echo __('3rd line'); ?></label></dt>
+        <dd><input type="text" name="address_addr3" id="address_addr3" value="" /></dd>
+      </dl>
+      <dl>
+        <dt><label for="address_city"><?php echo __('City'); ?></label></dt>
+        <dd><input type="text" name="address_city" id="address_city" value="" /></dd>
+
+        <dt><label for="address_province"><?php echo __('State/Province'); ?></label></dt>
+        <dd><input type="text" name="address_province" id="address_province" value="" /></dd>
+
+        <dt><label for="address_postal_code"><?php echo __('Postal Code'); ?></label></dt>
+        <dd><input type="text" name="address_postal_code" id="address_postal_code" value="" /></dd>
+      </dl>
+      <div style="clear: left;"><!-- --></div>
+    </dd>
+
+    <dt>
+      <label for="country"><?php echo __('Country'); ?></label>
+      <span class="required">*</span>
+    </dt>
+    <dd>
+      <input type="text" name="country" id="country" value="" />
+    </dd>
+
+    <dt>
+      <label for="phone_main"><?php echo __('Phones'); ?></label>
+    </dt>
+    <dd>
+      <dl>
+        <dt><label for="phone_main"><?php echo __('Main'); ?></label></dt>
+        <dd><input type="text" name="phone_main" id="phone_main" value="" /></dd>
+
+        <dt><label for="phone_mobile"><?php echo __('Mobile'); ?></label></dt>
+        <dd><input type="text" name="phone_mobile" id="phone_mobile" value="" /></dd>
+      </dl>
+      <dl>
+        <dt><label for="phone_tollfree"><?php echo __('Toll free'); ?></label></dt>
+        <dd><input type="text" name="phone_tollfree" id="phone_tollfree" value="" /></dd>
+
+        <dt><label for="phone_fax"><?php echo __('Fax'); ?></label></dt>
+        <dd><input type="text" name="phone_fax" id="phone_fax" value="" /></dd>
+      </dl>
+      <div style="clear: left;"><!-- --></div>
+    </dd>
+
+    <dd class="submit">
+      <input type="submit" value="<?php echo __('Create a new business'); ?>" />
+      <span><?php echo __('or'); ?></span>
+      <a href="<?php echo new Url('/admin/businesses'); ?>"><?php echo __('Cancel'); ?></a>
+    </dd>
+  </dl>
+</form>
+
+<?php echo Controller::dispatch('Admin_Helpers_Footer'); ?>
