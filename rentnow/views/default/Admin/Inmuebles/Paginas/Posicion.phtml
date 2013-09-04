@@ -1,0 +1,61 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Mover'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/mover$this->signo$this->cantidad"); ?>"><?php echo __('Mover'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php elseif ( false === $this->new ) : ?>
+  <div class="error">
+    <p><?php echo __('La página <strong>$0</strong> no puede ser movida.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+  <div class="warning">
+<?php switch ( $this->signo ) : ?>
+<?php case '+': ?>
+<?php if ( 1 == $this->cantidad ) : ?>
+    <p><?php echo __('Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia abajo. ¿Desea continuar?', $this->paginaCodigo); ?></p>
+<?php else : ?>
+    <p><?php echo __('Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia abajo. ¿Desea continuar?', $this->paginaCodigo, $this->cantidad); ?></p>
+<?php endif; ?>
+<?php break; ?>
+<?php case '-': ?>
+<?php if ( 1 == $this->cantidad ) : ?>
+    <p><?php echo __('Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia arriba. ¿Desea continuar?', $this->paginaCodigo); ?></p>
+<?php else : ?>
+    <p><?php echo __('Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia arriba. ¿Desea continuar?', $this->paginaCodigo, $this->cantidad); ?></p>
+<?php endif; ?>
+<?php break; ?>
+<?php endswitch; ?>
+  </div>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Mover'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

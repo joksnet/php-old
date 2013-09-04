@@ -1,0 +1,19 @@
+<?php switch ( $this->pagina->tipo ) : ?>
+<?php case 'html': ?>
+<?php echo Controller::dispatch('Inmueble_Pagina_HTML', $this->inmueble, $this->pagina); ?>
+<?php break; ?>
+<?php case 'fotos': ?>
+<?php echo Controller::dispatch('Inmueble_Pagina_Fotos', $this->inmueble, $this->pagina); ?>
+<?php break; ?>
+<?php case 'ubicacion': ?>
+<?php echo Controller::dispatch('Inmueble_Pagina_Ubicacion', $this->inmueble, $this->pagina); ?>
+<?php break; ?>
+<?php case 'contacto': ?>
+<?php echo Controller::dispatch('Inmueble_Pagina_Contacto', $this->inmueble, $this->pagina); ?>
+<?php break; ?>
+<?php default: ?>
+        <div class="error">
+          <p><?php echo __('No se puede mostrar el contenido de la página.') ?></p>
+        </div>
+<?php break; ?>
+<?php endswitch; ?>

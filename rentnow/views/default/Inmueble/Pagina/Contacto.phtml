@@ -1,0 +1,91 @@
+<div class="contacto">
+  <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->html); ?>
+<!-- HTML END -->
+  </div>
+  <dl>
+<?php if ( isset($this->datos['nombre']) && !( empty($this->datos['nombre']->contenido) ) ) : ?>
+    <dt><?php echo __('Contacto'); ?></dt>
+    <dd><?php echo $this->datos['nombre']->contenido; ?></dd>
+<?php endif; ?>
+<?php if ( isset($this->datos['telefono']) && !( empty($this->datos['telefono']->contenido) ) ) : ?>
+    <dt><?php echo __('Teléfono'); ?></dt>
+    <dd><?php echo $this->datos['telefono']->contenido; ?></dd>
+<?php if ( isset($this->datos['exterior']) && !( empty($this->datos['exterior']->contenido) ) ) : ?>
+    <dt><?php echo __('...desde el Exterior'); ?></dt>
+    <dd><?php echo $this->datos['exterior']->contenido; ?></dd>
+<?php endif; ?>
+<?php elseif ( isset($this->datos['exterior']) && !( empty($this->datos['exterior']->contenido) ) ) : ?>
+    <dt><?php echo __('Teléfono desde el Exterior'); ?></dt>
+    <dd><?php echo $this->datos['exterior']->contenido; ?></dd>
+<?php endif; ?>
+<?php if ( isset($this->datos['correo']) && !( empty($this->datos['correo']->contenido) ) ) : ?>
+    <dt><?php echo __('Correo Electrónico'); ?></dt>
+    <dd>
+      <a href="mailto:<?php echo $this->datos['correo']->contenido; ?>"><?php echo $this->datos['correo']->contenido; ?></a>
+    </dd>
+<?php endif; ?>
+  </dl>
+<?php if ( isset($this->datos['formulario']) && 1 == $this->datos['formulario']->contenido ) : ?>
+  <h3><?php echo __('Contacto'); ?></h3>
+  <p><?php echo __('Para enviar un mensaje inmediato, complete el siguiente formulario.'); ?></p>
+<?php if ( Request::hasQuery('ok') ) : ?>
+  <div class="success">
+    <p><?php echo __('Mensaje enviado con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['nombre'] ) : ?>
+      <li><?php echo __('Nombre y Apellidos requeridos.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['correo'] ) : ?>
+<?php if ( isset($this->errors['correo']['required']) ) : ?>
+      <li><?php echo __('Correo Electrónico requerido.'); ?></li>
+<?php elseif ( isset($this->errors['correo']['email']) ) : ?>
+      <li><?php echo __('Correo Electrónico inválido.'); ?></li>
+<?php endif; ?>
+<?php endif; ?>
+<?php if ( $this->errors['mensaje'] ) : ?>
+      <li><?php echo __('Mensaje requerido.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dt>
+        <label for="nombre"><?php echo __('Nombre y Apellidos'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre; ?>" />
+      </dd>
+
+      <dt>
+        <label for="correo"><?php echo __('Correo Electrónico'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="correo" id="correo" value="<?php echo $this->correo; ?>" />
+      </dd>
+
+      <dt>
+        <label for="mensaje"><?php echo __('Mensaje'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <textarea name="mensaje" id="mensaje" rows="3" cols="18"><?php echo $this->mensaje; ?></textarea>
+      </dd>
+
+      <dd class="submit">
+        <input type="hidden" name="fake" id="fake" value="" />
+        <input type="submit" value="<?php echo __('Enviar'); ?>" />
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>

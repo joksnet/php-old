@@ -1,0 +1,14 @@
+      <div id="footer">
+        <div class="inner">
+<?php echo Controller::dispatch('Helpers_Idiomas'); ?>
+          <ul>
+            <li class="label"><?php echo __('Sitio'); ?></li>
+            <li><a href="<?php echo new Url('/'); ?>"><?php echo __('Principal'); ?></a></li>
+            <li class="last"><a href="<?php echo new Url('/sitemap'); ?>"><?php echo __('Mapa del sitio'); ?></a></li>
+          </ul>
+          <p><?php echo __('Copyright ©'); ?> <?php echo ( $year = date('Y') ) == 2010 ? '2010' : "2010-$year"; ?></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

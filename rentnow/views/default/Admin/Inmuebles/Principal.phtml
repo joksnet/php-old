@@ -1,0 +1,84 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( $inmueble = Request::getQuery('deleted') ) : ?>
+  <div class="success">
+    <p><?php echo __('Inmueble <strong>$0</strong> eliminado con éxito.', $inmueble); ?></p>
+  </div>
+<?php elseif ( $inmueble = Request::getQuery('activo-1') ) : ?>
+  <div class="success">
+    <p><?php echo __('El inmueble <strong>$0</strong> se mostrará.', $inmueble); ?></p>
+  </div>
+<?php elseif ( $inmueble = Request::getQuery('activo-0') ) : ?>
+  <div class="success">
+    <p><?php echo __('El inmueble <strong>$0</strong> no se mostrará.', $inmueble); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( empty($this->inmuebles) ) : ?>
+  <div class="info">
+    <p><?php echo __('No hay ningún inmueble. Puede <a href="$0">agregar</a> uno.', new Url('/admin/inmuebles/agregar')); ?></p>
+  </div>
+<?php else : ?>
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><?php echo __('Código'); ?></th>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+        <th><?php echo __($idioma); ?></th>
+<?php endforeach; ?>
+        <th class="center"><?php echo __('Activo'); ?></th>
+        <th class="actions">
+          <a href="<?php echo new Url('/admin/inmuebles/agregar') ?>"><?php echo __('Agregar'); ?></a>
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="<?php echo 4 + sizeof($this->idiomas); ?>">
+<?php echo Controller::dispatch('Helpers_Pagination', $this->count, $this->page, $this->per); ?>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+<?php foreach ( $this->inmuebles as $n => $inmueble ) : ?>
+      <tr>
+        <td><?php echo $this->start + $n + 1; ?></td>
+        <td><?php echo $inmueble->codigo; ?></td>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+<?php if ( isset($inmueble->contenidos[$idioma]) ) : ?>
+        <td><?php echo $inmueble->contenidos[$idioma]->nombre; ?></td>
+<?php else : ?>
+        <td><em>(<?php echo __('Vacío'); ?>)</em></td>
+<?php endif; ?>
+<?php endforeach; ?>
+        <td class="center">
+<?php if ( $inmueble->activo ) : ?>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/activo"); ?>"><?php echo __('Sí'); ?></a>
+<?php else : ?>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/activo"); ?>"><?php echo __('No'); ?></a>
+<?php endif; ?>
+        </td>
+        <td class="actions">
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo"); ?>"><?php echo __('Ver'); ?></a>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/configuracion"); ?>"><?php echo __('Configuración'); ?></a>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/paginas"); ?>"><?php echo __('Páginas'); ?></a>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/fotos"); ?>"><?php echo __('Fotos'); ?></a>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/editar"); ?>"><?php echo __('Editar'); ?></a>
+          <a href="<?php echo new Url("/admin/inmuebles/$inmueble->codigo/eliminar"); ?>"><?php echo __('Eliminar'); ?></a>
+        </td>
+      </tr>
+<?php endforeach; ?>
+    </tbody>
+  </table>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

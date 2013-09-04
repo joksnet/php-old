@@ -1,0 +1,70 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->codigo)); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo"); ?>"><?php echo $this->codigo; ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->codigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( Request::hasQuery('added') ) : ?>
+  <div class="success">
+    <p><?php echo __('Inmueble agregado con éxito.'); ?></p>
+  </div>
+<?php elseif ( Request::hasQuery('edited') ) : ?>
+  <div class="success">
+    <p><?php echo __('Inmueble editado con éxito.'); ?></p>
+  </div>
+<?php elseif ( Request::hasQuery('config') ) : ?>
+  <div class="success">
+    <p><?php echo __('Configuración del inmueble editada con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( 0 == $this->inmueble->inmueble_pagina_id_inicio ) : ?>
+  <div class="warning">
+    <p><?php echo __('No tiene asignado una página de inicio, haga clic <a href="$0">aquí</a> para editar la configuración.', new Url("/admin/inmuebles/$this->codigo/configuracion")); ?></p>
+  </div>
+<?php endif; ?>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+  <fieldset>
+    <legend><?php echo __($idioma); ?></legend>
+<?php if ( isset($this->contenidos[$idioma]) ) : ?>
+    <dl>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->titulo; ?></dd>
+    </dl>
+    <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->contenidos[$idioma]->descripcion); ?>
+<!-- HTML END -->
+    </div>
+<?php else : ?>
+    <p><?php echo __('No se encontraron datos en <strong>$0</strong>.', __($idioma)); ?></p>
+<?php endif; ?>
+    <ul class="actions">
+      <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/editar/$idioma"); ?>"><?php echo __('Editar'); ?></a></li>
+    </ul>
+  </fieldset>
+<?php endforeach; ?>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/configuracion"); ?>"><?php echo __('Configuración'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/fotos"); ?>"><?php echo __('Fotos'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->codigo/eliminar"); ?>"><?php echo __('Eliminar'); ?></a></li>
+  </ul>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

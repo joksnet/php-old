@@ -1,0 +1,36 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Editar'), __('Fotos'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/fotos"); ?>"><?php echo __('Fotos'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+  <div class="info">
+    <p><?php echo __('Se mostrarán todas las fotografías.'); ?></p>
+  </div>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

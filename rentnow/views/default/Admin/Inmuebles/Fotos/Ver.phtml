@@ -1,0 +1,65 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Fotos'), $this->fotoCodigo)); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos"); ?>"><?php echo __('Fotos'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos/$this->fotoCodigo"); ?>"><?php echo $this->fotoCodigo; ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->foto->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->fotoCodigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( Request::hasQuery('added') ) : ?>
+  <div class="success">
+    <p><?php echo __('Foto agregada con éxito.'); ?></p>
+  </div>
+<?php elseif ( $mover = Request::getQuery('moved') ) : ?>
+<?php
+    $mover = urlencode($mover);
+    $signo = substr($mover, 0, 1);
+    $cantidad = intval(substr($mover, 1));
+?>
+  <div class="success">
+<?php switch ( $signo ) : ?>
+<?php case '+': ?>
+<?php if ( 1 == $cantidad ) : ?>
+    <p><?php echo __('Se desplazó <strong>un</strong> lugar hacia abajo.'); ?></p>
+<?php else : ?>
+    <p><?php echo __('Se desplazó <strong>$0</strong> lugares hacia abajo.', $cantidad); ?></p>
+<?php endif; ?>
+<?php break; ?>
+<?php case '-': ?>
+<?php if ( 1 == $cantidad ) : ?>
+    <p><?php echo __('Se desplazó <strong>un</strong> lugar hacia arriba.'); ?></p>
+<?php else : ?>
+    <p><?php echo __('Se desplazó <strong>$0</strong> lugares hacia arriba.', $cantidad); ?></p>
+<?php endif; ?>
+<?php break; ?>
+<?php endswitch; ?>
+  </div>
+<?php endif; ?>
+  <p class="foto">
+    <img src="<?php echo new Url("/upload/$this->inmuebleCodigo/medium/$this->fotoCodigo.jpg"); ?>" alt="<?php echo $this->fotoCodigo ?>" />
+  </p>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos/$this->fotoCodigo/mover"); ?>"><?php echo __('Mover'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos/$this->fotoCodigo/eliminar"); ?>"><?php echo __('Eliminar'); ?></a></li>
+  </ul>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

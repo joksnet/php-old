@@ -1,0 +1,90 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Editar'), __('Ubicación'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/ubicacion"); ?>"><?php echo __('Ubicación'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+  <p><?php echo __('Seleccione el idioma que desea editar.'); ?></p>
+  <ul>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/ubicacion/$idioma"); ?>"><?php echo __($idioma); ?></a></li>
+<?php endforeach; ?>
+  </ul>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['ubicacion'] ) : ?>
+      <li><?php echo __('La ubicación es requerida.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['width'] || $this->errors['height'] ) : ?>
+      <li><?php echo __('El tamaño debe ser un número en pixeles.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['zoom'] ) : ?>
+      <li><?php echo __('El zoom debe ser un número entre 1 y 20.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dt>
+        <label for="ubicacion"><?php echo __('Ubicación'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" name="ubicacion" id="ubicacion" value="<?php echo $this->ubicacion; ?>" />
+        <p><?php echo __('Ingrese la ubicación del inmueble.'); ?></p>
+      </dd>
+
+      <dt>
+        <label for="width"><?php echo __('Tamaño'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" class="number" name="width" id="width" value="<?php echo $this->width; ?>" /> x
+        <input type="text" class="number" name="height" id="height" value="<?php echo $this->height; ?>" />
+        <p><?php echo __('Ingrese el tamaño del mapa en pixeles.'); ?></p>
+      </dd>
+
+      <dt>
+        <label for="zoom"><?php echo __('Zoom'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" class="number" name="zoom" id="zoom" value="<?php echo $this->zoom; ?>" />
+        <p><?php echo __('La cantidad de zoom dada al mapa.'); ?></p>
+      </dd>
+
+      <dd class="submit">
+        <input type="hidden" name="lat" id="lat" value="0" />
+        <input type="hidden" name="lng" id="lng" value="0" />
+        <input type="submit" value="<?php echo __('Guardar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

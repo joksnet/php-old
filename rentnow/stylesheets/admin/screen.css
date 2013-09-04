@@ -1,0 +1,104 @@
+
+body { font-family: "Bitstream Vera Sans", "Dejavu Sans", Verdana, sans-serif; background-color: #EFEFEF; }
+
+#wrapper { text-align: left; margin: 0 auto; width: 73.076em; *width: 71.25em; }
+#wrapper a { text-decoration: none; color: #EB6F31; }
+#wrapper a:hover { text-decoration: underline; }
+
+#nav { background: url('images/nav.gif') repeat-x; }
+#nav { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+#nav { -webkit-box-shadow: 0 2px 7px  #CCC; -moz-box-shadow: 0 2px 7px #CCC; box-shadow: 0 2px 7px #CCC; }
+#nav ul { margin: 0; list-style-type: none; }
+#nav ul li { display: inline-block; margin: 0 -2px; border-right: 1px solid #E7E7E7; border-left: 1px solid #FFF; }
+#nav ul li.first { border-left-width: 0; }
+#nav ul li.last { border-right-width: 0; }
+#nav ul li a { display: block; line-height: 40px; padding: 0 10px; outline-width: 0; }
+
+#nav-idiomas { display: none; float: right; margin: 1em 0 0.5em 0; }
+#nav-idiomas ul { margin: 0; list-style-type: none; padding: 0 2em 0 0; }
+#nav-idiomas ul li { float: left; margin: 0 0.5em 0 0; padding: 5px 0; }
+
+#breadcrumb { margin: 1em 0 0.5em 0; }
+#breadcrumb ul { margin: 0; list-style-type: none; }
+#breadcrumb ul li { float: left; margin: 0 0.5em 0 0; padding: 5px 0; }
+
+#content { border: 1px solid #E7E7E7; background-color: #FFF; padding: 10px 32px 30px; }
+#content { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+#content h1 { color: #000; font-size: 153.9%; /** 20px */ font-weight: normal; border-bottom: 1px dotted; }
+#content h2 { color: #000; font-size: 138.5%; /** 18px */ font-weight: normal; border-bottom: 1px dotted; padding: 2px; }
+#content h3 { color: #000; font-size: 123.1%; /** 16px */ font-weight: normal; }
+
+#content div.foto { /* overflow: auto; max-height: 400px; *height: 30em; */ }
+#content div.html { /* overflow: auto; max-height: 400px; *height: 30em; border: 1px dotted #000; padding: 5px 20px; */ }
+#content div.mapa { /* width: 512px; background-color: #E7E7E7; padding: 3px; */ }
+#content div.mapa img { border: 5px solid #E7E7E7; }
+#content div.mapa p.leyenda { background-color: #E7E7E7; margin: 0; padding: 0.5em; }
+
+#content form dl {}
+#content form dl dt { float: left; /** 160px */ width: 12.25em; *width: 11.9em; text-align: right; line-height: 28px; padding: 3px 10px 3px 0; }
+#content form dl dt span.required { color: red; }
+#content form dl dt p { margin: 0; font-size: 88%; line-height: 125%; font-style: italic; text-align: right; }
+#content form dl dd { padding: 3px 10px; /** 160px */ margin-left: 12.25em; *margin-left: 11.9em; line-height: 28px; }
+#content form dl dd p { margin: 0; font-size: 88%; line-height: 125%; font-style: italic; }
+#content form dl dd span.path { color: #777; }
+#content form dl dd input, #content form dl dd textarea { background-color: #F5F5F5; border-color: #C7C7C7 white white #C7C7C7; border-style: solid; border-width: 1px; padding: 3px 4px; }
+#content form dl dd input:focus, #content form dl dd textarea:focus { border: 1px solid #EB6F31; outline: 1px solid #EB6F31; }
+#content form dl dd input.number { /** 30px */ width: 2.3em; *width: 2.25em; text-align: right; }
+#content form dl dd input.large { /** 400px */ width: 30.76em; *width: 30em; }
+#content form dl dd textarea.html { /** 600px */ width: 46.15em; *width: 45em; /** 400px */ height: 30.76em; *height: 30em; font-family: monospace; }
+#content form dl dd select option.level0 {}
+#content form dl dd select option.level1 { /** 15px */ padding-left: 1.15em; *padding-left: 1.125em; }
+#content form dl dd select option.level2 { /** 30px */ padding-left: 2.3em; *padding-left: 2.25em; }
+#content form dl dd select option.level3 { /** 45px */ padding-left: 3.46em; *padding-left: 3.375em; }
+#content form dl dd table { margin: 0 0 0.5em 0; }
+#content form dl dd ul.design { padding: 0; margin: 0.5em 0; list-style-type: none; }
+#content form dl dd ul.design li { float: left; }
+#content form dl dd ul.design li input { float: left; margin: 5px 10px 0 10px; }
+#content form dl dd ul.design li img { border: 1px dotted #000; margin-right: 10px; }
+#content form dl dd.submit { margin: 1em 0 0 0; padding: 0.5em; }
+#content form dl dd.submit input { background-color: #EB6F31; border-width: 0; color: #FFF; font-weight: normal; cursor: pointer; padding: 3px 10px; }
+#content form dl dd.submit input { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+#content form dl dd.submit input:focus { outline-width: 0; }
+#content form dl dd.map { margin: 0; }
+#content form dl dd.map input { /** 320px */ width: 24.5em; *width: 23.8em; }
+
+#content table { width: 100%; }
+#content table thead th p { font-weight: normal; margin: 0; font-size: 88%; line-height: 125%; font-style: italic; }
+#content table tr { border-bottom: 1px solid #EEE; vertical-align: middle; }
+#content table tr td, #content table tr th { padding: 8px 4px; vertical-align: top; }
+#content table tr .right, #content table tr .actions { text-align: right; }
+#content table tr .center { text-align: center; }
+#content table tr td span.disabled { color: #777; cursor: default; }
+#content table tfoot tr { border-bottom-width: 0; }
+
+#content fieldset { border-top: 1px dotted #000; padding-left: 20px; }
+#content fieldset legend { padding: 0 5px; font-size: 138.5%; /** 18px */ }
+
+#content ul.actions { list-style-type: none; padding: 0; }
+#content ul.actions li { display: inline; }
+
+#content .pagination { text-align: right; margin: 0; }
+#content .pagination span, #content .pagination a { padding: 1px 3px; margin-left: 2px; }
+#content .pagination span.disabled { color: #AAA; }
+#content .pagination span.current { color: #333; font-weight: bold; }
+
+#content blockquote { border-left: 3px solid #CCC; margin-left: 2em; padding: 0.5em; }
+
+#content pre.code { border-left: 3px solid #CCC; margin-left: 2em; padding: 0.5em; }
+#content pre.code span.pun { color: #666600; }
+#content pre.code span.pln { color: #000; }
+#content pre.code span.typ { color: #606; }
+#content pre.code span.kwd { color: #008; }
+#content pre.code span.lit { color: #066; }
+#content pre.code span.com { color: #800; }
+
+#footer { font-size: 85%; color: #333; }
+#footer a { color: #333; }
+#footer a:hover { color: #000; text-decoration: none; }
+#footer p { text-align: right; }
+#footer ul { list-style-type: none; margin: 0; padding: 0; float: right; }
+#footer ul li { display: inline; margin-left: 0.5em; padding-left: 0.5em; border-left: 1px dotted #CCC; }
+#footer ul li.label { display: none; }
+
+div.clear { clear: both; }

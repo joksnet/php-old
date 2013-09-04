@@ -1,0 +1,61 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Personas'), __('Agregar'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/personas'); ?>"><?php echo __('Personas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url('/admin/personas/agregar'); ?>"><?php echo __('Agregar'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['usuario'] ) : ?>
+      <li><?php echo __('Usuario requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( false === $this->unique ) : ?>
+      <li><?php echo __('El usuario ingresado no es único.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['contrasena'] ) : ?>
+      <li><?php echo __('Contraseña requerida.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dt>
+        <label for="usuario"><?php echo __('Usuario'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="usuario" id="usuario" value="<?php echo $this->usuario; ?>" />
+        <p><?php echo __('El usuario debe ser único. No se podrá modificar.'); ?></p>
+      </dd>
+
+      <dt>
+        <label for="contrasena"><?php echo __('Contraseña'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="password" name="contrasena" id="contrasena" />
+      </dd>
+
+      <dt><label for="nombre"><?php echo __('Nombre y Apellidos'); ?></label></dt>
+      <dd>
+        <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre; ?>" />
+      </dd>
+
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Agregar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url('/admin/personas')); ?></span>
+      </dd>
+    </dl>
+  </form>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

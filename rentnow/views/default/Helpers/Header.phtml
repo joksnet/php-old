@@ -1,0 +1,30 @@
+<?php
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "\n";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<?php if ( isset($this->options['meta']) && true === $this->options['meta'] ) : ?>
+<?php if ( $this->keywords ) : ?>
+    <meta name="keywords" content="<?php echo $this->keywords; ?>" />
+<?php endif; ?>
+<?php if ( $this->description ) : ?>
+    <meta name="description" content="<?php echo $this->description; ?>" />
+<?php endif; ?>
+<?php endif; ?>
+    <title><?php echo $this->title; ?> &laquo; <?php echo $this->nombre; ?></title>
+    <link rel="shortcut icon" href="<?php echo new Url('/favicon.ico'); ?>" type="image/x-icon" />
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/reset.css'); ?>" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/default/screen.css'); ?>" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <div class="inner">
+<?php echo Controller::dispatch('Helpers_Idiomas'); ?>
+          <p id="logo"><?php echo $this->nombre; ?></p>
+        </div>
+      </div>

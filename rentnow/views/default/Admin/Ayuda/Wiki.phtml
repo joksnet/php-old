@@ -1,0 +1,71 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Ayuda'), __('Sintaxis Wiki'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/ayuda'); ?>"><?php echo __('Ayuda'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url('/admin/ayuda/wiki'); ?>"><?php echo __('Sintaxis Wiki'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+  <h1><?php echo __('Sintaxis Wiki'); ?></h1>
+  <ul>
+    <li><a href="<?php echo new Url(); ?>#Parrafos"><?php echo __('Párrafos'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Estilos"><?php echo __('Estilos de texto'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Titulos"><?php echo __('Títulos'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Listas"><?php echo __('Listas'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Definiciones"><?php echo __('Definiciones'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Citas"><?php echo __('Citas'); ?></a></li>
+    <li><a href="<?php echo new Url(); ?>#Enlaces"><?php echo __('Enlaces'); ?></a></li>
+  </ul>
+
+  <h2><a name="Parrafos"></a><?php echo __('Párrafos'); ?></h2>
+  <p><?php echo __('Utilice una o más líneas en blanco para separar párrafos.'); ?></p>
+
+  <h2><a name="Estilos"></a><?php echo __('Estilos de texto'); ?></h2>
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th><?php echo __('Ejemplo'); ?></th>
+        <th><?php echo __('Sintaxis'); ?></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em><?php echo __('Cursiva'); ?></em></td>
+        <td>_<?php echo __('Cursiva'); ?>_</td>
+      </tr>
+      <tr>
+        <td><strong><?php echo __('Negrita'); ?></strong></td>
+        <td>*<?php echo __('Negrita'); ?>*</td>
+      </tr>
+      <tr>
+        <td><tt><?php echo __('Código'); ?></tt></td>
+        <td>`<?php echo __('Código'); ?>`</td>
+      </tr>
+      <tr>
+        <td><span style="text-decoration: line-through;"><?php echo __('Tachado'); ?></span></td>
+        <td>--<?php echo __('Tachado'); ?>--</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><a name="Titulos"></a><?php echo __('Títulos'); ?></h2>
+  <pre class="code">= <?php echo __('Título'); ?> =<br />== <?php echo __('Subtítulo'); ?> ==<br />=== <?php echo __('3er Nível'); ?> ===</pre>
+
+  <h2><a name="Listas"></a><?php echo __('Listas'); ?></h2>
+  <pre class="code"><?php echo __("Lo siguiente es una:\n* lista\n* con viñetas\n*# Esto es una\n*# sublista númerada\n* y de vuelta a la lista."); ?></pre>
+
+  <h2><a name="Definiciones"></a><?php echo __('Definiciones'); ?></h2>
+  <pre class="code"><?php echo __("; Sí : Lo contrario que No\n; No : Lo contrario que Sí\n; Quizas\n: Más o menos"); ?></pre>
+
+  <h2><a name="Citas"></a><?php echo __('Citas'); ?></h2>
+  <pre class="code"><?php echo __("Alguien una vez dijo:\n> Un libro abierto es un cerebro que habla; cerrado un amigo que espera;\n> olvidado, un alma que perdona; destruido, un corazón que llora."); ?></pre>
+
+  <h2><a name="Enlaces"></a><?php echo __('Enlaces'); ?></h2>
+  <pre class="code"><?php echo __("Direcciones como http://www.google.com/ o ftp://ftp.kernel.org/ son\nconvertidas automáticamente en enlaces.\n\nTambién puede proporcionar un texto descriptivo. Por ejemplo, el siguiente\nenlace lleva a la [http://www.google.com página principal de Google].\n\nSi el enlace apunta a una imagen, esta se inserta como una etiqueta de imagen\nen la página:\n\nhttp://code.google.com/images/code_sm.png\n\nTambién puede hacer que la imagen enlace un sitio, ingresando la dirección\nde la imagen como en la descripción del vínculo:\n\n[http://code.google.com/ http://code.google.com/images/code_sm.png]"); ?></pre>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

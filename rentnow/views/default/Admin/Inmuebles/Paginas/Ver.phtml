@@ -1,0 +1,231 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo)); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( Request::hasQuery('edited') ) : ?>
+  <div class="success">
+    <p><?php echo __('Página editada con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+<?php switch ( $this->pagina->tipo ) : ?>
+<?php case 'html': ?>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+  <fieldset>
+    <legend><?php echo __($idioma); ?></legend>
+<?php if ( isset($this->contenidos[$idioma]) ) : ?>
+    <dl>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->titulo; ?></dd>
+    </dl>
+<?php if ( isset($this->contenidos[$idioma]->datos['html']) ) : ?>
+    <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->contenidos[$idioma]->datos['html']); ?>
+<!-- HTML END -->
+    </div>
+<?php endif; ?>
+    <ul class="actions">
+      <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/html/$idioma"); ?>"><?php echo __('Editar'); ?></a></li>
+    </ul>
+<?php endif; ?>
+  </fieldset>
+<?php endforeach; ?>
+<?php break; ?>
+<?php case 'fotos': ?>
+<?php if ( Request::hasQuery('fotos') ) : ?>
+  <div class="success">
+    <p><?php echo __('Preferencias de las fotos almacenados con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+  <div class="info">
+    <p><?php echo __('Se mostrarán todas las <a href="$0">fotografías</a>.', new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos")); ?></p>
+  </div>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+  <fieldset>
+    <legend><?php echo __($idioma); ?></legend>
+<?php if ( isset($this->contenidos[$idioma]) ) : ?>
+    <dl>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->titulo; ?></dd>
+    </dl>
+<?php endif; ?>
+  </fieldset>
+<?php endforeach; ?>
+<?php break; ?>
+<?php case 'ubicacion': ?>
+<?php if ( Request::hasQuery('ubicacion') ) : ?>
+  <div class="success">
+<?php if ( strlen( $idioma = Request::getQuery('ubicacion') ) == 2 ) : ?>
+    <p><?php echo __('Descripción de la ubicación en <b>$0</b> almacenada con éxito.', __($idioma)); ?></p>
+<?php else : ?>
+    <p><?php echo __('Ubicación almacenada con éxito.'); ?></p>
+<?php endif; ?>
+  </div>
+<?php endif; ?>
+  <dl>
+    <dt><?php echo __('Ubicación'); ?></dt>
+<?php if ( isset($this->datos['ubicacion']) && !( empty($this->datos['ubicacion']->contenido) ) ) : ?>
+<?php $ubicacion = Url::encode($this->datos['ubicacion']->contenido); ?>
+    <dd><?php echo $this->datos['ubicacion']->contenido; ?></dd>
+
+    <dt><?php echo __('Mapa'); ?></dt>
+    <dd>
+      <div class="mapa">
+        <img src="http://maps.google.com/maps/api/staticmap?size=<?php echo $this->datos['width']->contenido; ?>x<?php echo $this->datos['height']->contenido; ?>&amp;maptype=roadmap&amp;sensor=false&amp;center=<?php echo $ubicacion; ?>&amp;zoom=<?php echo $this->datos['zoom']->contenido; ?>&amp;markers=<?php echo $ubicacion; ?>" alt="<?php echo __('Mapa no disponible.'); ?>" />
+      </div>
+    </dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+  </dl>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/ubicacion"); ?>"><?php echo __('Editar'); ?></a></li>
+  </ul>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+  <fieldset>
+    <legend><?php echo __($idioma); ?></legend>
+<?php if ( isset($this->contenidos[$idioma]) ) : ?>
+    <dl>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->titulo; ?></dd>
+    </dl>
+<?php if ( isset($this->contenidos[$idioma]->datos['html']) ) : ?>
+    <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->contenidos[$idioma]->datos['html']); ?>
+<!-- HTML END -->
+    </div>
+<?php endif; ?>
+    <ul class="actions">
+      <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/ubicacion/$idioma"); ?>"><?php echo __('Editar'); ?></a></li>
+    </ul>
+<?php endif; ?>
+  </fieldset>
+<?php endforeach; ?>
+<?php break; ?>
+<?php case 'contacto': ?>
+<?php if ( Request::hasQuery('contacto') ) : ?>
+  <div class="success">
+<?php if ( strlen( $idioma = Request::getQuery('contacto') ) == 2 ) : ?>
+    <p><?php echo __('Descripción de contacto en <b>$0</b> almacenada con éxito.', __($idioma)); ?></p>
+<?php else : ?>
+    <p><?php echo __('Datos de contacto almacenados con éxito.'); ?></p>
+<?php endif; ?>
+  </div>
+<?php endif; ?>
+  <dl>
+    <dt><?php echo __('Nombre'); ?></dt>
+<?php if ( isset($this->datos['nombre']) && !( empty($this->datos['nombre']->contenido) ) ) : ?>
+    <dd><?php echo $this->datos['nombre']->contenido; ?></dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+
+    <dt><?php echo __('Teléfono'); ?></dt>
+<?php if ( isset($this->datos['telefono']) && !( empty($this->datos['telefono']->contenido) ) ) : ?>
+    <dd><?php echo $this->datos['telefono']->contenido; ?></dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+
+    <dt><?php echo __('...desde el Exterior'); ?></dt>
+<?php if ( isset($this->datos['exterior']) && !( empty($this->datos['exterior']->contenido) ) ) : ?>
+    <dd><?php echo $this->datos['exterior']->contenido; ?></dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+
+    <dt><?php echo __('Correo Electrónico'); ?></dt>
+<?php if ( isset($this->datos['correo']) && !( empty($this->datos['correo']->contenido) ) ) : ?>
+    <dd><?php echo $this->datos['correo']->contenido; ?></dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+
+    <dt><?php echo __('¿Incluir formulario?'); ?></dt>
+<?php if ( isset($this->datos['formulario']) && !( empty($this->datos['formulario']->contenido) ) ) : ?>
+    <dd><?php echo $this->datos['formulario']->contenido == 1 ? __('Sí') : __('No'); ?></dd>
+<?php else : ?>
+    <dd>
+      <em>(<?php echo __('Vacío'); ?>)</em>
+    </dd>
+<?php endif; ?>
+  </dl>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/contacto"); ?>"><?php echo __('Editar'); ?></a></li>
+  </ul>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+  <fieldset>
+    <legend><?php echo __($idioma); ?></legend>
+<?php if ( isset($this->contenidos[$idioma]) ) : ?>
+    <dl>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenidos[$idioma]->titulo; ?></dd>
+    </dl>
+<?php if ( isset($this->contenidos[$idioma]->datos['html']) ) : ?>
+    <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->contenidos[$idioma]->datos['html']); ?>
+<!-- HTML END -->
+    </div>
+<?php endif; ?>
+    <ul class="actions">
+      <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/contacto/$idioma"); ?>"><?php echo __('Editar'); ?></a></li>
+    </ul>
+<?php endif; ?>
+  </fieldset>
+<?php endforeach; ?>
+<?php break; ?>
+<?php endswitch; ?>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/mover"); ?>"><?php echo __('Mover'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/eliminar"); ?>"><?php echo __('Eliminar'); ?></a></li>
+  </ul>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

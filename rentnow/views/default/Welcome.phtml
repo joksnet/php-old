@@ -1,0 +1,135 @@
+<?php echo Controller::dispatch('Helpers_Header', $this->title, array( 'meta' => true )); ?>
+
+      <div id="intro">
+        <div class="inner">
+          <div id="slogan">
+            <h1><?php echo __('<span>Una manera fácil de</span><strong>Alquilar en Buenos Aires</strong>'); ?></h1>
+          </div>
+<?php if ( $this->twitter && $this->twitter->status ) : ?>
+          <div id="social">
+            <p class="status"><?php echo $this->twitter->status->text; ?></p>
+            <p class="info">
+              <span class="date"><?php echo date('d/m/Y H:i', strtotime($this->twitter->status->created_at)); ?></span> &middot;
+              <a href="http://twitter.com/<?php echo $this->twitter->screen_name; ?>"><?php echo __('Seguirme en Twitter'); ?></a>
+            </p>
+          </div>
+<?php endif; ?>
+          <div class="clear"><!-- --></div>
+        </div>
+      </div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function()
+{
+    var fotos = [];
+
+    $('.inmueble-fotos').each(function()
+    {
+        var foto = $('li', this).hide().first().show();
+
+        if ( foto.length )
+            fotos.push(foto);
+    });
+
+    function next( i, speed )
+    {
+        var speed = speed || 'normal';
+
+        if ( fotos[i].data('effect') )
+            return;
+
+        fotos[i].data('effect', true).fadeOut(speed, function()
+        {
+            if ( !( fotos[i].data('effect') ) )
+                return;
+
+            var next = fotos[i].next();
+
+            if ( 0 >= next.length )
+            {
+                next = fotos[i].siblings().first();
+
+                if ( 0 >= next.length )
+                    next = fotos[i];
+            }
+
+            fotos[i] = next.fadeIn(speed);
+            fotos[i].data('effect', false);
+        });
+    };
+
+<?php switch ( $this->efecto ) : ?>
+<?php case Welcome::EFECTO_INTERVAL: ?>
+    setInterval(function()
+    {
+        for ( var i in fotos )
+            next(i, 'slow');
+    }, 7000);
+<?php break; ?>
+<?php case Welcome::EFECTO_HOVER: ?>
+    for ( var i in fotos )
+    {
+        fotos[i].parent().mouseover((function( i )
+        {
+            return function() { next(i); };
+        })(i));
+    }
+<?php break; ?>
+<?php endswitch; ?>
+});
+</script>
+
+      <div id="content">
+        <div class="inner">
+<?php if ( $this->inmuebles ) : ?>
+<?php foreach ( $this->inmuebles as $inmueble ) : ?>
+          <div class="inmueble" id="inmueble<?php echo $inmueble->id; ?>">
+            <div class="inmueble-inner">
+              <div class="descripcion">
+                <h2>
+                  <a href="<?php echo new Url("/{$inmueble->contenido->url}"); ?>"><?php echo $inmueble->contenido->nombre; ?></a>
+                </h2>
+                <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($inmueble->contenido->descripcion); ?>
+<!-- HTML END -->
+                </div>
+                <ul>
+                  <li>
+                    <a href="<?php echo new Url("/{$inmueble->contenido->url}"); ?>" class="entrar"><?php echo __('Entrar'); ?></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="inmueble-fotos" id="fotos<?php echo $inmueble->id; ?>">
+                <div class="inmueble-fotos-inner">
+<?php if ( $inmueble->fotos ) : ?>
+                  <ul>
+<?php foreach ( $inmueble->fotos as $foto ) : ?>
+                    <li class="foto<?php echo $foto->codigo; ?>">
+                      <a href="<?php echo new Url("/{$inmueble->contenido->url}"); ?>">
+                        <img src="<?php echo new Url("/upload/$inmueble->codigo/small/$foto->codigo.jpg"); ?>" alt="" />
+                      </a>
+                    </li>
+<?php endforeach; ?>
+                  </ul>
+<?php else : ?>
+                  <div class="error">
+                    <p><?php echo __('No se encontraron fotografías.'); ?></p>
+                  </div>
+<?php endif; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+<?php endforeach; ?>
+          <div class="clear"><!-- --></div>
+<?php else : ?>
+          <div class="error">
+            <p><?php echo __('Lo sentimos. Pero por el momento no disponemos de nigún inmueble disponible.') ?></p>
+          </div>
+<?php endif; ?>
+        </div>
+      </div>
+
+<?php echo Controller::dispatch('Helpers_Footer'); ?>

@@ -1,0 +1,20 @@
+<div class="fotos" id="fotos<?php echo $this->inmueble->id; ?>">
+  <div class="fotos-inner">
+<?php if ( $this->fotos ) : ?>
+    <ul>
+<?php foreach ( $this->fotos as $foto ) : ?>
+      <li class="foto<?php echo $foto->codigo; ?>">
+        <a href="<?php echo new Url("/upload/{$this->inmueble->codigo}/large/$foto->codigo.jpg"); ?>">
+          <img src="<?php echo new Url("/upload/{$this->inmueble->codigo}/medium/$foto->codigo.jpg"); ?>" alt="" />
+        </a>
+      </li>
+<?php endforeach; ?>
+    </ul>
+    <div class="clear"><!-- --></div>
+<?php else : ?>
+    <div class="error">
+      <p><?php echo __('No se encontraron fotografías.'); ?></p>
+    </div>
+<?php endif; ?>
+  </div>
+</div>

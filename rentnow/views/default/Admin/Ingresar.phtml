@@ -1,0 +1,46 @@
+<?php
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "\n";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title><?php echo __('Ingresar'); ?> &raquo; <?php echo __('Panel de Control'); ?> &raquo; <?php echo $this->nombre; ?></title>
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/reset.css'); ?>" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/admin/screen.css'); ?>" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h1><?php echo $this->nombre; ?></h1>
+      </div>
+<?php echo Controller::dispatch('Helpers_Idiomas'); ?>
+      <div id="content">
+        <h2><?php echo __('Ingresar'); ?></h2>
+<?php if ( $this->error ) : ?>
+        <div class="error">
+          <p><?php echo __('Usuario y contraseña no válida.'); ?></p>
+        </div>
+<?php endif; ?>
+        <form action="<?php echo new Url(); ?>" method="post">
+          <dl>
+            <dt><label for="usuario"><?php echo __('Usuario'); ?></label></dt>
+            <dd>
+              <input type="text" name="usuario" id="usuario" value="<?php echo $this->usuario; ?>" />
+            </dd>
+
+            <dt><label for="contrasena"><?php echo __('Contraseña'); ?></label></dt>
+            <dd>
+              <input type="password" name="contrasena" id="contrasena" />
+            </dd>
+
+            <dd class="submit">
+              <input type="submit" value="<?php echo __('Ingresar'); ?>" />
+            </dd>
+          </dl>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

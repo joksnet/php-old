@@ -1,0 +1,125 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Editar'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( $this->errors ) : ?>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+<?php if ( $this->errors["nombre_$idioma"] ) : ?>
+      <li><?php echo __('Nombre en <strong>$0</strong> requerido.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors["titulo_$idioma"] ) : ?>
+      <li><?php echo __('Título en <strong>$0</strong> requerido.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php if ( isset($this->errors["url_$idioma"]) && $this->errors["url_$idioma"] ) : ?>
+      <li><?php echo __('URL en <strong>$0</strong> requerida.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php endif; ?>
+<?php switch ($this->pagina->tipo) : ?>
+<?php case 'html': ?>
+  <div class="info">
+    <p><?php echo __('Haga clic <a href="$0">aquí</a> para editar el contenido de la página.', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/html")); ?></p>
+  </div>
+<?php break; ?>
+<?php case 'fotos': ?>
+  <div class="info">
+    <p><?php echo __('Haga clic <a href="$0">aquí</a> para editar el contenido de la página.', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/fotos")); ?></p>
+  </div>
+<?php break; ?>
+<?php case 'ubicacion': ?>
+  <div class="info">
+    <p><?php echo __('Haga clic <a href="$0">aquí</a> para editar el contenido de la página.', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/ubicacion")); ?></p>
+  </div>
+<?php break; ?>
+<?php case 'contacto': ?>
+  <div class="info">
+    <p><?php echo __('Haga clic <a href="$0">aquí</a> para editar el contenido de la página.', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/contacto")); ?></p>
+  </div>
+<?php break; ?>
+<?php default: ?>
+  <div class="error">
+    <p><?php echo __('La página no tiene un tipo asignado.'); ?></p>
+  </div>
+<?php break; ?>
+<?php endswitch; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+    <fieldset>
+      <legend><?php echo __($idioma); ?></legend>
+<?php if ( !( isset($this->paginaContenidos[$idioma]) ) ) : ?>
+      <div class="info">
+        <p><?php echo __('No se encontraron datos en <strong>$0</strong>. Elija la URL, esta no puede ser editada en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente.', __($idioma)); ?></p>
+      </div>
+<?php endif; ?>
+      <dl>
+        <dt>
+          <label for="nombre_<?php echo $idioma; ?>"><?php echo __('Nombre'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" name="nombre_<?php echo $idioma; ?>" id="nombre_<?php echo $idioma; ?>" value="<?php echo $this->nombre[$idioma]; ?>" />
+        </dd>
+
+        <dt>
+          <label for="nombre_<?php echo $idioma; ?>"><?php echo __('Título'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" name="titulo_<?php echo $idioma; ?>" id="titulo_<?php echo $idioma; ?>" value="<?php echo $this->titulo[$idioma]; ?>" />
+          <p><?php echo __('Aparecerá en la cabecera del navegador.'); ?></p>
+        </dd>
+
+<?php if ( isset($this->paginaContenidos[$idioma]) ) : ?>
+        <dt><?php echo __('URL'); ?></dt>
+        <dd>
+          <span class="path">/<?php echo $idioma . ( isset($this->inmuebleContenidos[$idioma]) ? "/{$this->inmuebleContenidos[$idioma]->url}" : '' ); ?>/</span>
+          <span><?php echo $this->paginaContenidos[$idioma]->url; ?></span>
+          <p><?php echo __('La URL no puede ser editada.'); ?></p>
+        </dd>
+<?php else : ?>
+        <dt>
+          <label for="url"><?php echo __('URL'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <span class="path">/<?php echo $idioma . ( isset($this->inmuebleContenidos[$idioma]) ? "/{$this->inmuebleContenidos[$idioma]->url}" : '' ); ?>/</span>
+          <input type="text" name="url_<?php echo $idioma; ?>" id="url_<?php echo $idioma; ?>" value="<?php echo $this->url[$idioma]; ?>" />
+        </dd>
+<?php endif; ?>
+      </dl>
+    </fieldset>
+<?php endforeach; ?>
+    <dl>
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Guardar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

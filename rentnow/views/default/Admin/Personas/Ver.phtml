@@ -1,0 +1,35 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Personas'), $this->usuario, __('Ver'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/personas'); ?>"><?php echo __('Personas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/personas/$this->usuario"); ?>"><?php echo $this->usuario; ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->persona->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->usuario); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( Request::hasQuery('added') ) : ?>
+  <div class="success">
+    <p><?php echo __('Persona agregada con éxito.'); ?></p>
+  </div>
+<?php elseif ( Request::hasQuery('edited') ) : ?>
+  <div class="success">
+    <p><?php echo __('Persona editada con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+  <p><?php echo $this->persona->nombre; ?></p>
+  <ul class="actions">
+    <li><a href="<?php echo new Url("/admin/personas/$this->usuario/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li><a href="<?php echo new Url("/admin/personas/$this->usuario/eliminar"); ?>"><?php echo __('Eliminar'); ?></a></li>
+  </ul>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

@@ -1,0 +1,117 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Editar'), __('Contenidos'), __($this->idioma))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/html"); ?>"><?php echo __('Contenidos'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/html/$this->idioma"); ?>"><?php echo __($this->idioma); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['nombre'] ) : ?>
+      <li><?php echo __('Nombre requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['titulo'] ) : ?>
+      <li><?php echo __('Título requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( isset($this->errors['url']) && $this->errors['url'] ) : ?>
+      <li><?php echo __('URL requerida.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['html'] ) : ?>
+      <li><?php echo __('Contenido requerido.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+<?php if ( !( $this->contenido->found() ) ) : ?>
+  <div class="info">
+    <p><?php echo __('No se encontraron datos en <strong>$0</strong>. Elija la URL, esta no puede ser editada en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente.', __($this->idioma)); ?></p>
+    <p><?php echo __('Recuerde que lo que ingrese aquí tiene el mayor peso al posicionarse. Puede ingresar una frase separada por puntos (Ej: <em>mi.santa.tu.hogar.en.colonia</em>) para posicionar ciertas palabras claves. Personalice al máximo y utilice únicamente palabras en el idioma.'); ?></p>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+<?php if ( $this->contenido->found() ) : ?>
+      <dt><?php echo __('Nombre'); ?></dt>
+      <dd><?php echo $this->contenido->nombre; ?></dd>
+
+      <dt><?php echo __('Título'); ?></dt>
+      <dd><?php echo $this->contenido->titulo; ?></dd>
+
+      <dt><?php echo __('URL'); ?></dt>
+      <dd>
+        <span class="path">/<?php echo $this->idioma . ( $this->inmuebleContenido->found() ? "/{$this->inmuebleContenido->url}" : '' ); ?>/</span>
+        <span><?php echo $this->contenido->url; ?></span>
+        <p><?php echo __('La URL no puede ser editada.'); ?></p>
+      </dd>
+<?php else : ?>
+      <dt>
+        <label for="nombre"><?php echo __('Nombre'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre; ?>" />
+      </dd>
+
+      <dt>
+        <label for="titulo"><?php echo __('Título'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="titulo" id="titulo" value="<?php echo $this->titulo; ?>" />
+      </dd>
+
+      <dt>
+        <label for="url"><?php echo __('URL'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <span class="path">/<?php echo $this->idioma . ( $this->inmuebleContenido->found() ? "/{$this->inmuebleContenido->url}" : '' ); ?>/</span>
+        <input type="text" name="url" id="url" value="<?php echo $this->url; ?>" />
+      </dd>
+<?php endif; ?>
+
+      <dt>
+        <label for="html"><?php echo __('Contenido'); ?></label>
+        <span class="required">*</span>
+        <p><?php echo __('El código <a href="$0">Wiki</a> se encuentra habilitado. No se permite código <abbr title="HyperText Markup Language">HTML</abbr>.', new Url('/admin/ayuda/wiki')); ?></p>
+      </dt>
+      <dd>
+        <textarea name="html" id="html" class="html" rows="3" cols="18"><?php echo $this->html; ?></textarea>
+      </dd>
+
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Guardar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/html")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

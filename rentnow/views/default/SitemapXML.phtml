@@ -1,0 +1,36 @@
+<?php
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "\n";
+?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc><?php echo new Url('/', true); ?></loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc><?php echo new Url('/sitemap', true); ?></loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+   </url>
+<?php if ( $this->inmuebles ) : ?>
+<?php foreach ( $this->inmuebles as $inmueble ) : ?>
+<?php if ( !( $inmueble->contenido ) ) continue; ?>
+   <url>
+      <loc><?php echo new Url("/{$inmueble->contenido->url}", true); ?></loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+<?php if ( $inmueble->paginas ) : ?>
+<?php foreach ( $inmueble->paginas as $pagina ) : ?>
+<?php if ( !( $pagina->contenido ) ) continue; ?>
+   <url>
+      <loc><?php echo new Url("/{$inmueble->contenido->url}/{$pagina->contenido->url}", true); ?></loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+<?php endforeach; ?>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php endif; ?>
+</urlset>

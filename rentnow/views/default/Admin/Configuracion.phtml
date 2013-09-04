@@ -1,0 +1,123 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Configuración'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/configuracion'); ?>"><?php echo __('Configuración'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+<div id="content">
+<?php if ( Request::hasQuery('edited') ) : ?>
+  <div class="success">
+    <p><?php echo __('Configuración editada con éxito.'); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( Request::hasQuery('error') ) : ?>
+  <div class="success">
+    <p><?php echo __('Ocurrió un error al guardar la Configuración.'); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['nombre'] ) : ?>
+      <li><?php echo __('Nombre del portal requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['idioma'] ) : ?>
+      <li><?php echo __('Idioma requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['efecto'] ) : ?>
+      <li><?php echo __('Efecto requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['twitter'] ) : ?>
+      <li><?php echo __('Cuenta de Twitter requerida.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['per'] ) : ?>
+      <li><?php echo __('La cantidad de registros por página debe ser un número.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <p><?php echo __('Seleccione el idioma que desea editar.'); ?></p>
+  <ul>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+    <li><a href="<?php echo new Url("/admin/configuracion/$idioma"); ?>"><?php echo __($idioma); ?></a></li>
+<?php endforeach; ?>
+  </ul>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <fieldset>
+      <legend><?php echo __('Portal'); ?></legend>
+      <dl>
+        <dt>
+          <label for="nombre"><?php echo __('Nombre del portal'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre; ?>" />
+        </dd>
+
+        <dt>
+          <label for="idioma"><?php echo __('Idioma'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <select name="idioma" id="idioma">
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+<?php if ( $idioma == $this->idioma ) : ?>
+            <option value="<?php echo $idioma; ?>" selected="selected"><?php echo __($idioma); ?></option>
+<?php else : ?>
+            <option value="<?php echo $idioma; ?>"><?php echo __($idioma); ?></option>
+<?php endif; ?>
+<?php endforeach; ?>
+          </select>
+        </dd>
+
+        <dt>
+          <label for="efecto"><?php echo __('Efecto'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <select name="efecto" id="efecto">
+<?php foreach ( $this->efectos as $efecto => $nombre ) : ?>
+<?php if ( $efecto == $this->efecto ) : ?>
+            <option value="<?php echo $efecto; ?>" selected="selected"><?php echo __($nombre); ?></option>
+<?php else : ?>
+            <option value="<?php echo $efecto; ?>"><?php echo __($nombre); ?></option>
+<?php endif; ?>
+<?php endforeach; ?>
+          </select>
+          <p><?php echo __('Efecto de rotación de las fotos en la página de inicio.'); ?></p>
+        </dd>
+
+        <dt>
+          <label for="twitter"><?php echo __('Cuenta de Twitter'); ?></label>
+        </dt>
+        <dd>
+          <input type="text" name="twitter" id="twitter" value="<?php echo $this->twitter; ?>" />
+          <p><?php echo __('Dejar en blanco para no utilizar.'); ?></p>
+        </dd>
+      </dl>
+    </fieldset>
+    <fieldset>
+      <legend><?php echo __('Panel de Control'); ?></legend>
+      <dl>
+        <dt>
+          <label for="per"><?php echo __('Registros por página'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" class="number" name="per" id="per" value="<?php echo $this->per; ?>" />
+        </dd>
+      </dl>
+    </fieldset>
+    <dl>
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Guardar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url('/admin')); ?></span>
+      </dd>
+    </dl>
+  </form>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

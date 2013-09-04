@@ -1,0 +1,42 @@
+<?php
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "\n";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo __('Error 404'); ?> &laquo; <?php echo $this->nombre; ?></title>
+    <link rel="shortcut icon" href="<?php echo new Url('/favicon.ico'); ?>" type="image/x-icon" />
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/reset.css'); ?>" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php echo new Url('/stylesheets/default/screen.css'); ?>" type="text/css" media="screen" />
+    <style type="text/css">
+body { background: #F2F2F2; }
+#error .inner { margin-top: 6em; width: 580px; background-color: #FFF; }
+#error .top { background: url('data:image/png;base64,R0lGODlhRAIIAKIAAN7e3v///+bm5vLy8vf39wAAAAAAAAAAACH5BAAHAP8ALAAAAABEAggAAAOJOKoC/jDKSau9OOvNu/9gKI5kaZ5oqq5sOwlLPDQCEdx4ru987//AoHBILBqPyKRyyWw6n9CodEqtWnUEmgxQu3q/4LB4TC6bz+i0OtdYCATruHxOr9vv+HzcoQDY9ICBgoOEhYaHRAQAM3CIjo+QkZKTlEBvfpWZmpucnZ5TAw6fo6SlpqeRAAkAOw==') no-repeat; height: 8px; }
+#error .bottom { background: url('data:image/png;base64,R0lGODlhRAIIAKIAAN7e3v///+bm5vLy8vj4+AAAAAAAAAAAACH5BAAHAP8ALAAAAABEAggAAAOLCLHc/jDKSau9OOvNu/9gKI5kaZ5oqmYEABBrLM90bd94ru98Lw0AgcBHLBqPyKRyyTQKBa+mdEqtWq/YLAswGAi14LB4TC6bJ64uUAA7u9/wuHwOIkDVXahg0Kb7/4CBgkteQXh4UC6Ki4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6Slpqeojnt4CQA7') no-repeat; height: 8px; }
+#error .content { padding: 34px 39px; border-width: 1px; border-color: #DDD; border-style: none solid; }
+#error .content h2 { font-size: 230.8%; color: #262626; font-weight: normal; margin: 0 0 0.7em 0; letter-spacing: 0; }
+#error .content h3 { font-size: 123.1%; color: #3e434a; font-weight: normal; margin: 0; padding: 0 0 1em 0; }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="error">
+        <div class="inner">
+          <div class="top"><!-- --></div>
+          <div class="content">
+            <h2><?php echo __('Error 404'); ?></h2>
+            <h3><?php echo __('Lo sentimos. Pero la página que busca no se encuentra. Por favor, refierase a alguno de los siguientes enlaces.') ?></h3>
+            <ul>
+              <li><a href="<?php echo new Url('/'); ?>"><?php echo __('Principal'); ?></a></li>
+              <li class="last"><a href="<?php echo new Url('/sitemap'); ?>"><?php echo __('Mapa del sitio'); ?></a></li>
+            </ul>
+          </div>
+          <div class="bottom"><!-- --></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<?php if ( $this->idiomas ) : ?>
+<div id="nav-idiomas">
+  <ul>
+    <li class="label"><?php echo __('Idiomas'); ?></li>
+<?php $count = sizeof($this->idiomas); ?>
+<?php foreach ( $this->idiomas as $i => $idioma ) : ?>
+    <li class="<?php echo $idioma; ?><?php if ( $count == $i + 1 ) echo ' last'; ?>"><a href="<?php echo Url::make($idioma); ?>" title="<?php echo __($idioma); ?>"><span><?php echo __($idioma); ?></span></a></li>
+<?php endforeach; ?>
+  </ul>
+</div>
+<?php endif; ?>

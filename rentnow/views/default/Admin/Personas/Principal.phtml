@@ -1,0 +1,57 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Personas'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/personas'); ?>"><?php echo __('Personas'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( $usuario = Request::getQuery('deleted') ) : ?>
+  <div class="success">
+    <p><?php echo __('El usuario <strong>$0</strong> fue eliminado.', $usuario); ?></p>
+  </div>
+<?php endif; ?>
+<?php if ( empty($this->personas) ) : ?>
+  <div class="info">
+    <p><?php echo __('No hay ninguna persona. Puede <a href="$0">agregar</a> una.', new Url('/admin/personas/agregar')); ?></p>
+  </div>
+<?php else : ?>
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><?php echo __('Usuario'); ?></th>
+        <th><?php echo __('Nombre y Apellidos'); ?></th>
+        <th class="actions">
+          <a href="<?php echo new Url('/admin/personas/agregar') ?>"><?php echo __('Agregar'); ?></a>
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+<?php echo Controller::dispatch('Helpers_Pagination', $this->count, $this->page, $this->per); ?>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+<?php foreach ( $this->personas as $n => $persona ) : ?>
+      <tr>
+        <td><?php echo $this->start + $n + 1; ?></td>
+        <td><?php echo $persona->usuario; ?></td>
+        <td><?php echo $persona->nombre; ?></td>
+        <td class="actions">
+          <a href="<?php echo new Url("/admin/personas/$persona->usuario"); ?>"><?php echo __('Ver'); ?></a>
+          <a href="<?php echo new Url("/admin/personas/$persona->usuario/editar"); ?>"><?php echo __('Editar'); ?></a>
+          <a href="<?php echo new Url("/admin/personas/$persona->usuario/eliminar"); ?>"><?php echo __('Eliminar'); ?></a>
+        </td>
+      </tr>
+<?php endforeach; ?>
+    </tbody>
+  </table>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

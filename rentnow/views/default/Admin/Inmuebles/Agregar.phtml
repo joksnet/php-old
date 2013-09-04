@@ -1,0 +1,93 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), __('Agregar'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url('/admin/inmuebles/agregar'); ?>"><?php echo __('Agregar'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['codigo'] ) : ?>
+      <li><?php echo __('Código requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( false === $this->unique ) : ?>
+      <li><?php echo __('El código ingresado no es único.'); ?></li>
+<?php endif; ?>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+<?php if ( $this->errors["nombre_$idioma"] ) : ?>
+      <li><?php echo __('Nombre en <strong>$0</strong> requerido.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors["titulo_$idioma"] ) : ?>
+      <li><?php echo __('Título en <strong>$0</strong> requerido.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors["url_$idioma"] ) : ?>
+      <li><?php echo __('URL en <strong>$0</strong> requerida.', __($idioma)); ?></li>
+<?php endif; ?>
+<?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dt>
+        <label for="codigo"><?php echo __('Código'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="codigo" id="codigo" value="<?php echo $this->codigo; ?>" />
+        <p><?php echo __('El código identifica de forma única al inmueble.') ?></p>
+      </dd>
+    </dl>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+    <fieldset>
+      <legend><?php echo __($idioma); ?></legend>
+      <dl>
+        <dt>
+          <label for="nombre_<?php echo $idioma; ?>"><?php echo __('Nombre'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" name="nombre_<?php echo $idioma; ?>" id="nombre_<?php echo $idioma; ?>" value="<?php echo $this->{"nombre_$idioma"}; ?>" />
+        </dd>
+
+        <dt>
+          <label for="titulo_<?php echo $idioma; ?>"><?php echo __('Título'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <input type="text" name="titulo_<?php echo $idioma; ?>" id="titulo_<?php echo $idioma; ?>" value="<?php echo $this->{"titulo_$idioma"}; ?>" />
+          <p><?php echo __('Aparecerá en la cabecera del navegador.'); ?></p>
+        </dd>
+
+        <dt>
+          <label for="url_<?php echo $idioma; ?>"><?php echo __('URL'); ?></label>
+          <span class="required">*</span>
+        </dt>
+        <dd>
+          <span class="path">/<?php echo $idioma; ?>/</span>
+          <input type="text" name="url_<?php echo $idioma; ?>" id="url_<?php echo $idioma; ?>" value="<?php echo $this->{"url_$idioma"}; ?>" />
+        </dd>
+      </dl>
+    </fieldset>
+<?php endforeach; ?>
+    <div class="info">
+      <p><?php echo __('Elija con ciudado las URLs, estas no pueden editadas en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente.'); ?></p>
+      <p><?php echo __('Recuerde que lo que ingrese aquí tiene el mayor peso al posicionarse. Puede ingresar una frase separada por puntos (Ej: <em>mi.santa.tu.hogar.en.colonia</em>) para posicionar ciertas palabras claves. Personalice al máximo y utilice únicamente palabras en el idioma.'); ?></p>
+    </div>
+    <dl>
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Agregar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url('/admin/inmuebles')); ?></span>
+      </dd>
+    </dl>
+  </form>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

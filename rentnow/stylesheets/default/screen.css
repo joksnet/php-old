@@ -1,0 +1,93 @@
+
+body { font: 13px/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; color: #333; }
+
+a { color: #55A4F2; text-decoration: none; }
+a:hover { color: #333; }
+a.disabled { color: #999; cursor: normal; }
+
+#wrapper {}
+#wrapper .inner { width: 960px; margin-left: auto; margin-right: auto; }
+#wrapper .clear { clear: both; }
+
+#header {}
+#header #logo { color: #4E443C; font-family: Georgia, serif; font-size: 197%; font-variant: small-caps; font-weight: normal; text-transform: none; margin: 0.1em 0; }
+#header #nav-idiomas { float: right; }
+#header #nav-idiomas ul { list-style-type: none; padding-left: 0; }
+#header #nav-idiomas ul li { float: left; padding-right: 0.5em; }
+#header #nav-idiomas ul li.label { display: none; }
+#header #nav-idiomas ul li a { display: block; width: 16px; height: 16px; background-image: url('images/flags.png'); background-repeat: no-repeat; }
+#header #nav-idiomas ul li a span { display: none; }
+#header #nav-idiomas ul li.es a { background-position: 0 -16px; }
+#header #nav-idiomas ul li.en a { background-position: 0 -32px; }
+#header #nav-idiomas ul li.fr a { background-position: 0 -48px; }
+#header #nav-idiomas ul li.pt a { background-position: 0 -64px; }
+
+#intro { background-color: #EDEBE1; border-top: 1px solid #CCC; border-bottom: 1px solid #CCC; }
+#intro #slogan { display: inline; float: left; width: 659px; padding: 20px 0; padding-right: 20px; margin: 0 10px; }
+#intro #slogan h1 { margin: 0; letter-spacing: -1px; font-weight: normal; line-height: 1em; white-space: nowrap; }
+#intro #slogan h1 span { font-size: 93%; display: block; text-transform: uppercase; }
+#intro #slogan h1 span.after { text-align: right; }
+#intro #slogan h1 strong { font-size: 323%; text-shadow: 0 1px 0 white; line-height: 0.8em; }
+#intro #social { display: inline; float: left; width: 220px; height: 83px; overflow: hidden; padding: 20px 0; padding-left: 20px; margin: 0 10px; border-left: 1px dotted #CCC; }
+#intro #social p { margin: 0; }
+#intro #social p.status { background: url('images/quote.gif') no-repeat; padding-left: 18px; }
+#intro #social p.info { text-align: right; font-size: 85%; }
+
+#nav { background-color: #EDEBE1; border-top: 1px solid #CCC; border-bottom: 1px solid #CCC; }
+#nav ul { margin: 0; list-style-type: none; }
+#nav ul li { display: inline; float: left; }
+#nav ul li a { display: block; line-height: 40px; padding: 0 10px; outline-width: 0; font-family: Gill Sans, Verdana; text-transform: uppercase; letter-spacing: 1px; }
+#nav ul li.selected { background-color: #CCC; }
+#nav ul li.selected a { color: #FFF; }
+
+#content { margin: 1em 0; padding-bottom: 1em; border-bottom: 1px solid #CCC; }
+
+#content.alone { border-top: 1px solid #CCC; }
+
+#content .inmueble { float: left; width: 470px; height: 250px; }
+#content .inmueble .descripcion { float: right; width: 180px; margin: 0 15px; }
+#content .inmueble .descripcion h2 { color: #333; font-size: 116%; text-transform: uppercase; border-bottom: 1px solid #DDD; }
+#content .inmueble .descripcion h2 a { color: #333; }
+#content .inmueble .descripcion p { color: #666; }
+#content .inmueble .descripcion ul { list-style-type: none; padding: 0; }
+#content .inmueble .descripcion ul li { text-align: right; }
+#content .inmueble .inmueble-fotos { float: left; width: 252px; padding: 4px; background-color: #EEE; }
+#content .inmueble .inmueble-fotos { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+#content .inmueble .inmueble-fotos-inner { padding: 5px; padding-bottom: 1px; background-color: #FFF; border: 1px solid #DDD; }
+#content .inmueble .inmueble-fotos-inner { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+#content .inmueble .inmueble-fotos ul { list-style-type: none; margin: 0; padding: 0; }
+#content .inmueble .inmueble-fotos p { margin: 0; text-align: right; }
+
+#content .fotos ul { list-style-type: none; margin: 0; padding: 0; }
+#content .fotos ul li { width: 512px; padding: 4px; margin: 1em 0; background-color: #EEE; }
+#content .fotos ul li { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+#content .fotos ul li a { display: block; padding: 5px; padding-bottom: 1px; background-color: #FFF; border: 1px solid #DDD; }
+#content .fotos ul li a { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+
+#content .ubicacion .html { width: 416px; float: right; }
+#content .ubicacion .mapa { width: 524px; padding: 4px; background-color: #EEE; }
+#content .ubicacion .mapa { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+#content .ubicacion .mapa-inner { padding: 5px; padding-bottom: 1px; background-color: #FFF; border: 1px solid #DDD; }
+#content .ubicacion .mapa-inner { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+#content .ubicacion .mapa .leyenda { height: 16px; font-size: 93%; background: url('images/icons.gif') no-repeat 0 -240px; padding-left: 18px; margin: 0.5em; }
+
+#content dl {}
+#content dl dt { float: left; /** 160px */ width: 12.25em; *width: 11.9em; text-align: right; line-height: 28px; padding: 3px 10px 3px 0; }
+#content dl dd { padding: 3px 10px; /** 160px */ margin-left: 12.25em; *margin-left: 11.9em; line-height: 28px; }
+
+#content form dl {}
+#content form dl dt { float: none; margin: 0; padding: 0; text-align: left; }
+#content form dl dt span.required { color: #F33; }
+#content form dl dd { margin: 0; padding: 0; }
+#content form dl dd textarea { /** 400px */ width: 30.76em; *width: 30em; }
+
+#content a.entrar { background: url('images/icons.gif') no-repeat 0 -16px; padding-left: 18px; }
+#content a.entrar:hover { background-position: 0 -32px; }
+#content a.entrar.disabled { background-position: 0 -48px; }
+
+#footer { font-size: 85%; }
+#footer ul { list-style-type: none; margin: 0; padding: 0; float: left; clear: left; }
+#footer ul li { display: inline; margin-right: 0.5em; padding-right: 0.5em; border-right: 1px dotted #CCC; }
+#footer ul li.label { border-width: 0; width: 60px; display: block; float: left; text-align: right; }
+#footer ul li.last { border-width: 0; }
+#footer p { color: #666; text-align: right; }

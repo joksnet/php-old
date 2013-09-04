@@ -1,0 +1,99 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Páginas'), $this->paginaCodigo, __('Editar'), __('Contacto'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas"); ?>"><?php echo __('Páginas'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo"); ?>"><?php echo $this->paginaCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar"); ?>"><?php echo __('Editar'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/contacto"); ?>"><?php echo __('Contacto'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php elseif ( !( $this->pagina->found() ) ) : ?>
+ <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->paginaCodigo); ?></p>
+  </div>
+<?php else : ?>
+  <p><?php echo __('Seleccione el idioma que desea editar.'); ?></p>
+  <ul>
+<?php foreach ( $this->idiomas as $idioma ) : ?>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar/contacto/$idioma"); ?>"><?php echo __($idioma); ?></a></li>
+<?php endforeach; ?>
+  </ul>
+  <div class="info">
+    <p><?php echo __('Ningún campo es obligatorio.'); ?></p>
+    <p><?php echo __('Estos datos se mostrarán en todos los idiomas.'); ?></p>
+  </div>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['correo'] && isset($this->errors['correo']['email']) ) : ?>
+      <li><?php echo __('Correo Electrónico inválido.'); ?></li>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post">
+    <dl>
+      <dt>
+        <label for="nombre"><?php echo __('Nombre'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre; ?>" />
+      </dd>
+
+      <dt>
+        <label for="telefono"><?php echo __('Teléfono'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" name="telefono" id="telefono" value="<?php echo $this->telefono; ?>" />
+      </dd>
+
+      <dt>
+        <label for="exterior"><?php echo __('...desde el Exterior'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" name="exterior" id="exterior" value="<?php echo $this->exterior; ?>" />
+        <p>Ej. +54 11 4963 4827</p>
+      </dd>
+
+      <dt>
+        <label for="correo"><?php echo __('Correo Electrónico'); ?></label>
+      </dt>
+      <dd>
+        <input type="text" name="correo" id="correo" value="<?php echo $this->correo; ?>" />
+      </dd>
+
+      <dd>
+<?php if ( $this->formulario ) : ?>
+        <input type="checkbox" class="checkbox" name="formulario" id="formulario" value="1" checked="checked" />
+<?php else : ?>
+        <input type="checkbox" class="checkbox" name="formulario" id="formulario" value="1" />
+<?php endif; ?>
+        <label for="formulario"><?php echo __('¿Incluir formulario?'); ?></label>
+      </dd>
+
+      <dd class="submit">
+        <input type="submit" value="<?php echo __('Guardar'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/paginas/$this->paginaCodigo/editar")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

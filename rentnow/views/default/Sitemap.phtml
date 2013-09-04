@@ -1,0 +1,33 @@
+<?php echo Controller::dispatch('Helpers_Header', __('Mapa del sitio')); ?>
+
+      <div id="content" class="alone">
+        <div class="inner">
+          <h3><?php echo __('Sitio'); ?></h3>
+          <ul>
+            <li><a href="<?php echo new Url('/'); ?>"><?php echo __('Principal'); ?></a></li>
+            <li><a href="<?php echo new Url('/sitemap'); ?>"><?php echo __('Mapa del sitio'); ?></a></li>
+          </ul>
+
+<?php if ( $this->inmuebles ) : ?>
+          <h3><?php echo __('Inmuebles'); ?></h3>
+          <ul>
+<?php foreach ( $this->inmuebles as $inmueble ) : ?>
+<?php if ( !( $inmueble->contenido ) ) continue; ?>
+            <li>
+              <a href="<?php echo new Url("/{$inmueble->contenido->url}"); ?>"><?php echo $inmueble->contenido->nombre; ?></a>
+<?php if ( $inmueble->paginas ) : ?>
+              <ul>
+<?php foreach ( $inmueble->paginas as $pagina ) : ?>
+<?php if ( !( $pagina->contenido ) ) continue; ?>
+                <li><a href="<?php echo new Url("/{$inmueble->contenido->url}/{$pagina->contenido->url}"); ?>"><?php echo $pagina->contenido->nombre; ?></a></li>
+<?php endforeach; ?>
+              </ul>
+<?php endif; ?>
+            </li>
+<?php endforeach; ?>
+          </ul>
+<?php endif; ?>
+        </div>
+      </div>
+
+<?php echo Controller::dispatch('Helpers_Footer'); ?>

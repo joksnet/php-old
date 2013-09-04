@@ -1,0 +1,750 @@
+msgid ""
+msgstr ""
+"Last-Translator: Juan M Martínez <joksnet@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Project-Id-Version: \n"
+"Language-Team: \n"
+
+msgid "es"
+msgstr "Español"
+
+msgid "en"
+msgstr "Ingles"
+
+msgid "fr"
+msgstr "Francés"
+
+msgid "pt"
+msgstr "Portugués"
+
+msgid "<span>Una manera fácil de</span><strong>Alquilar en Buenos Aires</strong>"
+msgstr "<span>Una manera fácil de</span> <strong>Alquilar en Buenos Aires</strong> <span class=\"after\">para viajeros de bajo presupuesto</span>"
+
+msgid "Lo sentimos. Pero por el momento no disponemos de nigún inmueble disponible."
+msgstr "Lo sentimos. Pero por el momento no disponemos de nigún inmueble disponible."
+
+msgid "Copyright ©"
+msgstr "Todos los derechos reservados &middot; Copyright ©"
+
+msgid "Entrar"
+msgstr "Entrar"
+
+msgid "Seguirme en Twitter"
+msgstr "Seguirme en Twitter"
+
+msgid "No se puede mostrar el contenido de la página."
+msgstr "No se puede mostrar el contenido de la página."
+
+msgid "Teléfono"
+msgstr "Teléfono"
+
+msgid "...desde el Exterior"
+msgstr "...desde el Exterior"
+
+msgid "Teléfono desde el Exterior"
+msgstr "Teléfono desde el Exterior"
+
+msgid "Correo Electrónico"
+msgstr "Correo Electrónico"
+
+msgid "Contacto"
+msgstr "Contacto"
+
+msgid "Para enviar un mensaje inmediato, complete el siguiente formulario."
+msgstr "Para enviar un mensaje inmediato, complete el siguiente formulario."
+
+msgid "Por favor verifique los siguientes errores:"
+msgstr "Por favor verifique los siguientes errores:"
+
+msgid "Nombre y Apellidos requeridos."
+msgstr "Nombre y Apellidos requeridos."
+
+msgid "Correo Electrónico requerido."
+msgstr "Correo Electrónico requerido."
+
+msgid "Correo Electrónico inválido."
+msgstr "Correo Electrónico inválido."
+
+msgid "Mensaje requerido."
+msgstr "Mensaje requerido."
+
+msgid "Nombre y Apellidos"
+msgstr "Nombre y Apellidos"
+
+msgid "Mensaje"
+msgstr "Mensaje"
+
+msgid "Enviar"
+msgstr "Enviar"
+
+msgid "Mensaje enviado con éxito."
+msgstr "Mensaje enviado con éxito."
+
+msgid "No se encontraron fotografías."
+msgstr "No se encontraron fotografías."
+
+msgid "Mapa no disponible."
+msgstr "Mapa no disponible."
+
+msgid "Idiomas"
+msgstr "Idiomas"
+
+msgid "Sitio"
+msgstr "Sitio"
+
+msgid "Principal"
+msgstr "Principal"
+
+msgid "Mapa del sitio"
+msgstr "Mapa del sitio"
+
+msgid "Volver a $0"
+msgstr "Volver a $0"
+
+msgid "Inmuebles"
+msgstr "Inmuebles"
+
+msgid "Error 404"
+msgstr "Error 404"
+
+msgid "Lo sentimos. Pero la página que busca no se encuentra. Por favor, refierase a alguno de los siguientes enlaces."
+msgstr "Lo sentimos. Pero la página que busca no se encuentra. Por favor, refierase a alguno de los siguientes enlaces."
+
+msgid "Panel de Control"
+msgstr "Panel de Control"
+
+msgid "Ingresar"
+msgstr "Ingresar"
+
+msgid "Salir"
+msgstr "Salir"
+
+msgid "Usuario"
+msgstr "Usuario"
+
+msgid "Contraseña"
+msgstr "Contraseña"
+
+msgid "Nombre"
+msgstr "Nombre"
+
+msgid "Usuario y contraseña no válida."
+msgstr "Usuario y contraseña no válida."
+
+msgid "Usuario requerido."
+msgstr "Usuario requerido."
+
+msgid "El usuario ingresado no es único."
+msgstr "El usuario ingresado no es único."
+
+msgid "Contraseña requerida."
+msgstr "Contraseña requerida."
+
+msgid "El usuario debe ser único. No se podrá modificar."
+msgstr "El usuario debe ser único. No se podrá modificar."
+
+msgid "Nombre requerido."
+msgstr "Nombre requerido."
+
+msgid "Título requerido."
+msgstr "Título requerido."
+
+msgid "URL requerida."
+msgstr "URL requerida."
+
+msgid "Registro <strong>$0</strong> no encontrado."
+msgstr "Registro <strong>$0</strong> no encontrado."
+
+msgid "Ayuda"
+msgstr "Ayuda"
+
+msgid "Tipos"
+msgstr "Tipos"
+
+msgid "Sintaxis"
+msgstr "Sintaxis"
+
+msgid "Vease <a href=\"$0\">Sintaxis Wiki</a>."
+msgstr "Vease <a href=\"$0\">Sintaxis Wiki</a>."
+
+msgid "Sintaxis Wiki"
+msgstr "Sintaxis Wiki"
+
+msgid "Párrafos"
+msgstr "Párrafos"
+
+msgid "Utilice una o más líneas en blanco para separar párrafos."
+msgstr "Utilice una o más líneas en blanco para separar párrafos."
+
+msgid "Estilos de texto"
+msgstr "Estilos de texto"
+
+msgid "Ejemplo"
+msgstr "Ejemplo"
+
+msgid "Cursiva"
+msgstr "Cursiva"
+
+msgid "Negrita"
+msgstr "Negrita"
+
+msgid "Tachado"
+msgstr "Tachado"
+
+msgid "Títulos"
+msgstr "Títulos"
+
+msgid "Título"
+msgstr "Título"
+
+msgid "Subtítulo"
+msgstr "Subtítulo"
+
+msgid "3er Nível"
+msgstr "3er Nível"
+
+msgid "Listas"
+msgstr "Listas"
+
+msgid ""
+"Lo siguiente es una:\n"
+"* lista\n"
+"* con viñetas\n"
+"*# Esto es una\n"
+"*# sublista númerada\n"
+"* y de vuelta a la lista."
+msgstr ""
+"Lo siguiente es una:\n"
+"* lista\n"
+"* con viñetas\n"
+"*# Esto es una\n"
+"*# sublista númerada\n"
+"* y de vuelta a la lista."
+
+msgid "Definiciones"
+msgstr "Definiciones"
+
+msgid ""
+"; Sí : Lo contrario que No\n"
+"; No : Lo contrario que Sí\n"
+"; Quizas\n"
+": Más o menos"
+msgstr ""
+"; Sí : Lo contrario que No\n"
+"; No : Lo contrario que Sí\n"
+"; Quizas\n"
+": Más o menos"
+
+msgid "Citas"
+msgstr "Citas"
+
+msgid ""
+"Alguien una vez dijo:\n"
+"> Un libro abierto es un cerebro que habla; cerrado un amigo que espera;\n"
+"> olvidado, un alma que perdona; destruido, un corazón que llora."
+msgstr ""
+"Alguien una vez dijo:\n"
+"> Un libro abierto es un cerebro que habla; cerrado un amigo que espera;\n"
+"> olvidado, un alma que perdona; destruido, un corazón que llora."
+
+msgid "Enlaces"
+msgstr "Enlaces"
+
+msgid ""
+"Direcciones como http://www.google.com/ o ftp://ftp.kernel.org/ son\n"
+"convertidas automáticamente en enlaces.\n"
+"\n"
+"También puede proporcionar un texto descriptivo. Por ejemplo, el siguiente\n"
+"enlace lleva a la [http://www.google.com página principal de Google].\n"
+"\n"
+"Si el enlace apunta a una imagen, esta se inserta como una etiqueta de imagen\n"
+"en la página:\n"
+"\n"
+"http://code.google.com/images/code_sm.png\n"
+"\n"
+"También puede hacer que la imagen enlace un sitio, ingresando la dirección\n"
+"de la imagen como en la descripción del vínculo:\n"
+"\n"
+"[http://code.google.com/ http://code.google.com/images/code_sm.png]"
+msgstr ""
+"Direcciones como http://www.google.com/ o ftp://ftp.kernel.org/ son\n"
+"convertidas automáticamente en enlaces.\n"
+"\n"
+"También puede proporcionar un texto descriptivo. Por ejemplo, el siguiente\n"
+"enlace lleva a la [http://www.google.com página principal de Google].\n"
+"\n"
+"Si el enlace apunta a una imagen, esta se inserta como una etiqueta de imagen\n"
+"en la página:\n"
+"\n"
+"http://code.google.com/images/code_sm.png\n"
+"\n"
+"También puede hacer que la imagen enlace un sitio, ingresando la dirección\n"
+"de la imagen como en la descripción del vínculo:\n"
+"\n"
+"[http://code.google.com/ http://code.google.com/images/code_sm.png]"
+
+msgid "Configuración"
+msgstr "Configuración"
+
+msgid "Configuración editada con éxito."
+msgstr "Configuración editada con éxito."
+
+msgid "Ocurrió un error al guardar la Configuración."
+msgstr "Ocurrió un error al guardar la Configuración."
+
+msgid "El título de la página principal."
+msgstr "El título de la página principal."
+
+msgid "Palabras claves"
+msgstr "Palabras claves"
+
+msgid "Separadas por comas. Ej: Apartments, Flats, Buenos Aires, Rent"
+msgstr "Separadas por comas. Ej: Apartments, Flats, Buenos Aires, Rent"
+
+msgid "Una descripción general del sitio. Normalmente utilizada por los buscadores para posicionar."
+msgstr "Una descripción general del sitio. Normalmente utilizada por los buscadores para posicionar."
+
+msgid "Parámetros básicos."
+msgstr "Parámetros básicos."
+
+msgid "Controla los parámetros básicos del sitio. Estos se almacenan en el archivo <tt>/application.ini</tt>, que nunca debe ser editado a mano y siempre mediante el fomulario de <a href=\"$0\">Configuración</a>."
+msgstr "Controla los parámetros básicos del sitio. Estos se almacenan en el archivo <tt>/application.ini</tt>, que nunca debe ser editado a mano y siempre mediante el fomulario de <a href=\"$0\">Configuración</a>."
+
+msgid "Portal"
+msgstr "Portal"
+
+msgid "Nombre del portal"
+msgstr "Nombre del portal"
+
+msgid "Nombre del portal requerido."
+msgstr "Nombre del portal requerido."
+
+msgid "Idioma"
+msgstr "Idioma"
+
+msgid "Idioma requerido."
+msgstr "Idioma requerido."
+
+msgid "Efecto"
+msgstr "Efecto"
+
+msgid "Efecto de rotación de las fotos en la página de inicio."
+msgstr "Efecto de rotación de las fotos en la página de inicio."
+
+msgid "Rotar las fotografías cada 7 segundos"
+msgstr "Rotar las fotografías cada 7 segundos"
+
+msgid "Rotar las fotografías al pasar el mouse por encima"
+msgstr "Rotar las fotografías al pasar el mouse por encima"
+
+msgid "Efecto requerido."
+msgstr "Efecto requerido."
+
+msgid "Cuenta de Twitter"
+msgstr "Cuenta de Twitter"
+
+msgid "Dejar en blanco para no utilizar."
+msgstr "Dejar en blanco para no utilizar."
+
+msgid "Cuenta de Twitter requerida."
+msgstr "Cuenta de Twitter requerida."
+
+msgid "Registros por página"
+msgstr "Registros por página"
+
+msgid "La cantidad de registros por página debe ser un número."
+msgstr "La cantidad de registros por página debe ser un número."
+
+msgid "Personas"
+msgstr "Personas"
+
+msgid "Personas que tienen acceso al Panel de Control."
+msgstr "Personas que tienen acceso al Panel de Control."
+
+msgid "Persona agregada con éxito."
+msgstr "Persona agregada con éxito."
+
+msgid "Persona editada con éxito."
+msgstr "Persona editada con éxito."
+
+msgid "No hay ninguna persona. Puede <a href=\"$0\">agregar</a> una."
+msgstr "No hay ninguna persona. Puede <a href=\"$0\">agregar</a> una."
+
+msgid "Se encuentra a punto de eliminar a <strong>$0</strong> del sistema. ¿Desea continuar?"
+msgstr "Se encuentra a punto de eliminar a <strong>$0</strong> del sistema. ¿Desea continuar?"
+
+msgid "El usuario <strong>$0</strong> fue eliminado."
+msgstr "El usuario <strong>$0</strong> fue eliminado."
+
+msgid "Haga clic <a href=\"$0\">aquí</a> para editar la contraseña."
+msgstr "Haga clic <a href=\"$0\">aquí</a> para editar la contraseña."
+
+msgid "Micrositios con información sobre las propiedades."
+msgstr "Micrositios con información sobre las propiedades."
+
+msgid "Nombre en <strong>$0</strong> requerido."
+msgstr "Nombre en <strong>$0</strong> requerido."
+
+msgid "Título en <strong>$0</strong> requerido."
+msgstr "Título en <strong>$0</strong> requerido."
+
+msgid "Aparecerá en la cabecera del navegador."
+msgstr "Aparecerá en la cabecera del navegador."
+
+msgid "URL en <strong>$0</strong> requerida."
+msgstr "URL en <strong>$0</strong> requerida."
+
+msgid "Código"
+msgstr "Código"
+
+msgid "El código identifica de forma única al inmueble."
+msgstr "El código identifica de forma única al inmueble."
+
+msgid "Código requerido."
+msgstr "Código requerido."
+
+msgid "El código ingresado no es único."
+msgstr "El código ingresado no es único."
+
+msgid "Inmueble agregado con éxito."
+msgstr "Inmueble agregado con éxito."
+
+msgid "Inmueble editado con éxito."
+msgstr "Inmueble editado con éxito."
+
+msgid "Inmueble <strong>$0</strong> eliminado con éxito."
+msgstr "Inmueble <strong>$0</strong> eliminado con éxito."
+
+msgid "Activo"
+msgstr "Activo"
+
+msgid "El inmueble <strong>$0</strong> se encuentra visible. ¿Deséa ocultarlo?"
+msgstr "El inmueble <strong>$0</strong> se encuentra visible. ¿Deséa ocultarlo?"
+
+msgid "El inmueble <strong>$0</strong> se encuentra oculto. ¿Deséa mostrarlo?"
+msgstr "El inmueble <strong>$0</strong> se encuentra oculto. ¿Deséa mostrarlo?"
+
+msgid "El inmueble <strong>$0</strong> se mostrará."
+msgstr "El inmueble <strong>$0</strong> se mostrará."
+
+msgid "El inmueble <strong>$0</strong> no se mostrará."
+msgstr "El inmueble <strong>$0</strong> no se mostrará."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Elija con ciudado las URLs, estas no pueden editadas en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente."
+msgstr "Elija con ciudado las URLs, estas no pueden editadas en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente."
+
+msgid "Recuerde que lo que ingrese aquí tiene el mayor peso al posicionarse. Puede ingresar una frase separada por puntos (Ej: <em>mi.santa.tu.hogar.en.colonia</em>) para posicionar ciertas palabras claves. Personalice al máximo y utilice únicamente palabras en el idioma."
+msgstr "Recuerde que lo que ingrese aquí tiene el mayor peso al posicionarse. Puede ingresar una frase separada por puntos (Ej: <em>mi.santa.tu.hogar.en.colonia</em>) para posicionar ciertas palabras claves. Personalice al máximo y utilice únicamente palabras en el idioma."
+
+msgid "No se encontraron datos en <strong>$0</strong>. Elija la URL, esta no puede ser editada en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente."
+msgstr "No se encontraron datos en <strong>$0</strong>. Elija la URL, esta no puede ser editada en el futuro porque se perdería la indexación de buscadores. Puede utilizar letras, números y puntos únicamente."
+
+msgid "No se encontraron datos en <strong>$0</strong>."
+msgstr "No se encontraron datos en <strong>$0</strong>."
+
+msgid "La URL no puede ser editada."
+msgstr "La URL no puede ser editada."
+
+msgid "Descripción"
+msgstr "Descripción"
+
+msgid "Descripción requerida."
+msgstr "Descripción requerida."
+
+msgid "No hay ningún inmueble. Puede <a href=\"$0\">agregar</a> uno."
+msgstr "No hay ningún inmueble. Puede <a href=\"$0\">agregar</a> uno."
+
+msgid "No tiene asignado una página de inicio, haga clic <a href=\"$0\">aquí</a> para editar la configuración."
+msgstr "No tiene asignado una página de inicio, haga clic <a href=\"$0\">aquí</a> para editar la configuración."
+
+msgid "Inicio"
+msgstr "Inicio"
+
+msgid "Será la primer página que se visualice al ingresar al micrositio."
+msgstr "Será la primer página que se visualice al ingresar al micrositio."
+
+msgid "Página de inicio requerida."
+msgstr "Página de inicio requerida."
+
+msgid "Lateral"
+msgstr "Lateral"
+
+msgid "El contenido se mostrará a lo largo de todas las páginas."
+msgstr "El contenido se mostrará a lo largo de todas las páginas."
+
+msgid "Remover"
+msgstr "Remover"
+
+msgid "Configuración del inmueble editada con éxito."
+msgstr "Configuración del inmueble editada con éxito."
+
+msgid "Diseño"
+msgstr "Diseño"
+
+msgid "Será como se vea el micrositio."
+msgstr "Será como se vea el micrositio."
+
+msgid "Diseño requerido."
+msgstr "Diseño requerido."
+
+msgid "Seleccione el idioma que desea editar."
+msgstr "Seleccione el idioma que desea editar."
+
+msgid "Fotos"
+msgstr "Fotos"
+
+msgid "Foto"
+msgstr "Foto"
+
+msgid "Preferencias de las fotos almacenados con éxito."
+msgstr "Preferencias de las fotos almacenados con éxito."
+
+msgid "Se mostrarán todas las fotografías."
+msgstr "Se mostrarán todas las fotografías."
+
+msgid "Se mostrarán todas las <a href=\"$0\">fotografías</a>."
+msgstr "Se mostrarán todas las <a href=\"$0\">fotografías</a>."
+
+msgid "El inmueble <strong>$0</strong> no tiene ninguna foto. Puede <a href=\"$1\">agregar</a> una."
+msgstr "El inmueble <strong>$0</strong> no tiene ninguna foto. Puede <a href=\"$1\">agregar</a> una."
+
+msgid "Subir"
+msgstr "Subir"
+
+msgid "Bajar"
+msgstr "Bajar"
+
+msgid "Ocurrió un error al subir la fotografía."
+msgstr "Ocurrió un error al subir la fotografía."
+
+msgid "La fotografía no puede superar los 5<abbr title=\"Megabyte\">Mb</abbr>."
+msgstr "La fotografía no puede superar los 5<abbr title=\"Megabyte\">Mb</abbr>."
+
+msgid "El archivo seleccionado no es una imagen."
+msgstr "El archivo seleccionado no es una imagen."
+
+msgid "Pulse continuar para eliminar la fotografía."
+msgstr "Pulse continuar para eliminar la fotografía."
+
+msgid "Foto agregada con éxito."
+msgstr "Foto agregada con éxito."
+
+msgid "Foto eliminada con éxito."
+msgstr "Foto eliminada con éxito."
+
+msgid "La fotografía no puede ser movida."
+msgstr "La fotografía no puede ser movida."
+
+msgid "Páginas"
+msgstr "Páginas"
+
+msgid "El inmueble <strong>$0</strong> no tiene ninguna página. Puede <a href=\"$1\">agregar</a> una."
+msgstr "El inmueble <strong>$0</strong> no tiene ninguna página. Puede <a href=\"$1\">agregar</a> una."
+
+msgid "Página <strong>$0</strong> eliminada con éxito."
+msgstr "Página <strong>$0</strong> eliminada con éxito."
+
+msgid "El código identifica de forma única a la página."
+msgstr "El código identifica de forma única a la página."
+
+msgid "Tipo"
+msgstr "Tipo"
+
+msgid "Seleccionar"
+msgstr "Seleccionar"
+
+msgid "Tipo de página requerido."
+msgstr "Tipo de página requerido."
+
+msgid "El tipo de página no podrá ser modificado."
+msgstr "El tipo de página no podrá ser modificado."
+
+msgid "Contenidos"
+msgstr "Contenidos"
+
+msgid "Contenido"
+msgstr "Contenido"
+
+msgid "Ubicación"
+msgstr "Ubicación"
+
+msgid "Tamaño"
+msgstr "Tamaño"
+
+msgid "Ingrese el tamaño del mapa en pixeles."
+msgstr "Ingrese el tamaño del mapa en pixeles."
+
+msgid "El tamaño debe ser un número en pixeles."
+msgstr "El tamaño debe ser un número en pixeles."
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "La cantidad de zoom dada al mapa."
+msgstr "La cantidad de zoom dada al mapa."
+
+msgid "El zoom debe ser un número entre 1 y 20."
+msgstr "El zoom debe ser un número entre 1 y 20."
+
+msgid "Ninguno"
+msgstr "Ninguno"
+
+msgid "La página no tiene un tipo asignado."
+msgstr "La página no tiene un tipo asignado."
+
+msgid "Haga clic <a href=\"$0\">aquí</a> para editar el contenido de la página."
+msgstr "Haga clic <a href=\"$0\">aquí</a> para editar el contenido de la página."
+
+msgid "Ubicación almacenada con éxito."
+msgstr "Ubicación almacenada con éxito."
+
+msgid "Descripción de la ubicación en <b>$0</b> almacenada con éxito."
+msgstr "Descripción de la ubicación en <b>$0</b> almacenada con éxito."
+
+msgid "La ubicación es requerida."
+msgstr "La ubicación es requerida."
+
+msgid "Ingrese la ubicación del inmueble."
+msgstr "Ingrese la ubicación del inmueble."
+
+msgid "Mapa"
+msgstr "Mapa"
+
+msgid "El código <a href=\"$0\">Wiki</a> se encuentra habilitado. No se permite código <abbr title=\"HyperText Markup Language\">HTML</abbr>."
+msgstr "El código <a href=\"$0\">Wiki</a> se encuentra habilitado. No se permite código <abbr title=\"HyperText Markup Language\">HTML</abbr>."
+
+msgid "Página editada con éxito."
+msgstr "Página editada con éxito."
+
+msgid "Página en <strong>$0</strong> editada con éxito."
+msgstr "Página en <strong>$0</strong> editada con éxito."
+
+msgid "Contenido requerido."
+msgstr "Contenido requerido."
+
+msgid "Ningún campo es obligatorio."
+msgstr "Ningún campo es obligatorio."
+
+msgid "Estos datos se mostrarán en todos los idiomas."
+msgstr "Estos datos se mostrarán en todos los idiomas."
+
+msgid "¿Incluir formulario?"
+msgstr "¿Incluir formulario?"
+
+msgid "Datos de contacto almacenados con éxito."
+msgstr "Datos de contacto almacenados con éxito."
+
+msgid "Descripción de contacto en <b>$0</b> almacenada con éxito."
+msgstr "Descripción de contacto en <b>$0</b> almacenada con éxito."
+
+msgid "Vacío"
+msgstr "Vacío"
+
+msgid "Sí"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "Mover"
+msgstr "Mover"
+
+msgid "La página <strong>$0</strong> no puede ser movida."
+msgstr "La página <strong>$0</strong> no puede ser movida."
+
+msgid "Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia abajo. ¿Desea continuar?"
+msgstr "Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia abajo. ¿Desea continuar?"
+
+msgid "Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia abajo. ¿Desea continuar?"
+msgstr "Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia abajo. ¿Desea continuar?"
+
+msgid "Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia arriba. ¿Desea continuar?"
+msgstr "Se encuentra a punto de desplazar <strong>$0</strong> un lugar hacia arriba. ¿Desea continuar?"
+
+msgid "Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia arriba. ¿Desea continuar?"
+msgstr "Se encuentra a punto de desplazar <strong>$0</strong> $1 lugares hacia arriba. ¿Desea continuar?"
+
+msgid "Operación"
+msgstr "Operación"
+
+msgid "Operación requerida."
+msgstr "Operación requerida."
+
+msgid "Lugares"
+msgstr "Lugares"
+
+msgid "Cantidad de lugares requeridos."
+msgstr "Cantidad de lugares requeridos."
+
+msgid "Se desplazó <strong>un</strong> lugar hacia abajo."
+msgstr "Se desplazó <strong>un</strong> lugar hacia abajo."
+
+msgid "Se desplazó <strong>$0</strong> lugares hacia abajo."
+msgstr "Se desplazó <strong>$0</strong> lugares hacia abajo."
+
+msgid "Se desplazó <strong>un</strong> lugar hacia arriba."
+msgstr "Se desplazó <strong>un</strong> lugar hacia arriba."
+
+msgid "Se desplazó <strong>$0</strong> lugares hacia arriba."
+msgstr "Se desplazó <strong>$0</strong> lugares hacia arriba."
+
+msgid "¿Menú?"
+msgstr "¿Menú?"
+
+msgid "Mostrar"
+msgstr "Mostrar"
+
+msgid "Ocultar"
+msgstr "Ocultar"
+
+msgid "La página <strong>$0</strong> se encuentra visible en el menú. ¿Deséa ocultarla?"
+msgstr "La página <strong>$0</strong> se encuentra visible en el menú. ¿Deséa ocultarla?"
+
+msgid "La página <strong>$0</strong> se encuentra oculta en el menú. ¿Deséa mostrarla?"
+msgstr "La página <strong>$0</strong> se encuentra oculta en el menú. ¿Deséa mostrarla?"
+
+msgid "La página <strong>$0</strong> se mostrará en el menú."
+msgstr "La página <strong>$0</strong> se mostrará en el menú."
+
+msgid "La página <strong>$0</strong> no se mostrará en el menú."
+msgstr "La página <strong>$0</strong> no se mostrará en el menú."
+
+msgid "Agregar"
+msgstr "Agregar"
+
+msgid "Ver"
+msgstr "Ver"
+
+msgid "Editar"
+msgstr "Editar"
+
+msgid "Eliminar"
+msgstr "Eliminar"
+
+msgid "Guardar"
+msgstr "Guardar"
+
+msgid "ó <a href=\"$0\">Cancelar</a>"
+msgstr "ó <a href=\"$0\">Cancelar</a>"
+
+msgid "Mensaje de $0"
+msgstr "Mensaje de $0"
+
+msgid ""
+"Nombre: $0\n"
+"Correo: $1\n"
+"Mensaje:\n"
+"$2"
+msgstr ""
+"Nombre: $0\n"
+"Correo: $1\n"
+"Mensaje:\n"
+"$2"
+

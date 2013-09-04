@@ -1,0 +1,55 @@
+
+body { background-color: #EFEFEF; font: 62.5%/1 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; }
+
+body a { color: #6797D7; text-decoration: none; }
+body a:hover { color: #000; }
+
+h1, h2, h3 { font-family: Georgia, serif; font-weight: normal; letter-spacing: 1px; }
+
+h1, h2#logo { font-size: 2.6em; line-height: 50px; margin: 0 0 40px 0; border-bottom: 1px dotted #D6D6D6; }
+h1 a, h2#logo a { color: #000; }
+
+h2 { font-size: 1.8em; line-height: 1.2em; margin: 0 0 30px 0; }
+h3 { font-size: 1.3em; line-height: 1.2em; margin: 0 0 10px 0; border-bottom: 1px dotted #D6D6D6; color: #909090; }
+
+#wrapper { font-size: 1.4em; line-height: 1.3em; margin: 100px auto 0; width: 840px; }
+
+#header { float: left; width: 280px; }
+#header #nav-idiomas { display: none; }
+
+#nav { float: right; width: 500px; }
+#nav ul { border-bottom: 1px dotted #D6D6D6; font-size: 1.4em; line-height: 50px; margin: 0 0 40px 0; padding: 0; list-style-type: none; }
+#nav ul li { display: inline; margin-right: 20px; }
+#nav ul li.selected a { color: #CACACA; }
+
+#sidebar { float: left; width: 280px; }
+#sidebar img { border: 1px solid #D8DFE7; padding: 10px; background-color: #FFF; }
+#sidebar img:hover { border-color: #FFF; }
+
+#sidebar dl {}
+#sidebar dl dt { width: 110px; float: left; color: #797979; padding: 0 15px 15px 0; }
+#sidebar dl dd { padding-bottom: 15px; }
+
+#content { float: right; width: 500px; }
+
+#content dl {}
+#content dl dt { width: 110px; float: left; color: #797979; text-align: right; padding: 0 15px 15px 0; }
+#content dl dd { margin-left: 125px; padding: 0 0 15px 0; }
+
+#content form {}
+#content form dl {}
+#content form dl dt { color: #000; }
+#content form dl dt span.required { color: red; }
+#content form dl dd {}
+#content form dl dd.submit { margin-left: 125px; }
+
+#content .fotos ul { margin: 0; padding: 0; list-style-type: none; }
+
+#content .contacto dl dt { width: 220px; }
+#content .contacto dl dd.submit { margin-left: 235px; }
+
+#footer { clear: both; font-size: 0.8em; padding: 30px 0; }
+#footer ul { list-style-type: none; margin: 0; padding: 0; float: left; }
+#footer ul li { display: inline; margin-right: 0.5em; padding-right: 0.5em; border-right: 1px dotted #CCC; }
+#footer ul li.label { display: none; }
+#footer p { color: #666; text-align: right; }

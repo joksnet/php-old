@@ -1,0 +1,72 @@
+<?php echo Controller::dispatch('Admin_Header', array(__('Inmuebles'), $this->inmuebleCodigo, __('Fotos'), __('Agregar'))); ?>
+
+<div id="breadcrumb">
+  <ul>
+    <li><a href="<?php echo new Url('/admin/inmuebles'); ?>"><?php echo __('Inmuebles'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo"); ?>"><?php echo $this->inmuebleCodigo; ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos"); ?>"><?php echo __('Fotos'); ?></a></li>
+    <li>&raquo;</li>
+    <li><a href="<?php echo new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos/agregar"); ?>"><?php echo __('Agregar'); ?></a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+</div>
+
+<div id="content">
+<?php if ( !( $this->inmueble->found() ) ) : ?>
+  <div class="error">
+    <p><?php echo __('Registro <strong>$0</strong> no encontrado.', $this->inmuebleCodigo); ?></p>
+  </div>
+<?php else : ?>
+<?php if ( $this->errors ) : ?>
+  <div class="error">
+    <p><?php echo __('Por favor verifique los siguientes errores:'); ?></p>
+    <ul>
+<?php if ( $this->errors['codigo'] ) : ?>
+      <li><?php echo __('Código requerido.'); ?></li>
+<?php endif; ?>
+<?php if ( false === $this->unique ) : ?>
+      <li><?php echo __('El código ingresado no es único.'); ?></li>
+<?php endif; ?>
+<?php if ( $this->errors['foto'] ) : ?>
+<?php if ( isset($this->errors['foto']['file']) ) : ?>
+      <li><?php echo __('Ocurrió un error al subir la fotografía.'); ?></li>
+<?php elseif ( isset($this->errors['foto']['fileMax']) ) : ?>
+      <li><?php echo __('La fotografía no puede superar los 5<abbr title="Megabyte">Mb</abbr>.'); ?></li>
+<?php elseif ( isset($this->errors['foto']['fileType']) ) : ?>
+      <li><?php echo __('El archivo seleccionado no es una imagen.'); ?></li>
+<?php endif; ?>
+<?php endif; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+  <form action="<?php echo new Url(); ?>" method="post" enctype="multipart/form-data">
+    <dl>
+      <dt>
+        <label for="codigo"><?php echo __('Código'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="text" name="codigo" id="codigo" value="<?php echo $this->codigo; ?>" />
+      </dd>
+
+      <dt>
+        <label for="foto"><?php echo __('Foto'); ?></label>
+        <span class="required">*</span>
+      </dt>
+      <dd>
+        <input type="file" name="foto" id="foto" />
+      </dd>
+
+      <dd class="submit">
+        <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+        <input type="submit" value="<?php echo __('Subir'); ?>" />
+        <span><?php echo __('ó <a href="$0">Cancelar</a>', new Url("/admin/inmuebles/$this->inmuebleCodigo/fotos")); ?></span>
+      </dd>
+    </dl>
+  </form>
+<?php endif; ?>
+</div>
+
+<?php echo Controller::dispatch('Admin_Footer'); ?>

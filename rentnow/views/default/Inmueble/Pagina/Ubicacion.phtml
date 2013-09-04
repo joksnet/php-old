@@ -1,0 +1,16 @@
+<div class="ubicacion">
+  <div class="html">
+<!-- HTML BEGIN -->
+<?php echo new Wiki($this->html); ?>
+<!-- HTML END -->
+  </div>
+  <div class="mapa">
+    <div class="mapa-inner">
+      <a href="http://maps.google.com/?q=<?php echo $this->ubicacionUrl; ?>">
+        <img src="http://maps.google.com/maps/api/staticmap?size=<?php echo $this->width; ?>x<?php echo $this->height; ?>&amp;maptype=roadmap&amp;sensor=false&amp;center=<?php echo $this->ubicacionUrl; ?>&amp;zoom=<?php echo $this->zoom; ?>&amp;markers=<?php echo $this->ubicacionUrl; ?>" alt="<?php echo __('Mapa no disponible.'); ?>" />
+      </a>
+      <p class="leyenda"><?php echo $this->ubicacion; ?></p>
+    </div>
+  </div>
+  <div class="clear"><!-- --></div>
+</div>

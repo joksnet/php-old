@@ -1,0 +1,34 @@
+
+body, div, span,
+h1, h2, h3, h4, h5, h6,
+dl, dt, dd, ol, ul, li,
+form, label, fieldset, legend, p, blockquote, code,
+abbr, acronym, a, img, big, small, strike, strong,
+table, thead, tbody, tfoot, tr, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 13px;
+    *font-size: small; /* for IE */
+    *font: x-small; /* for IE in quirks mode */
+    font-family: Arial, Helvetica, Clean, sans-serif;
+    line-height: 1.231;
+}
+
+fieldset, img { border-width: 0; }
+
+h1, h2, h3, p, fieldset, table, ol, ul, dl { margin: 1em 0; }
+h1 { font-size: 138.5%; /* 18px */ }
+h2 { font-size: 123.1%; /* 16px */ }
+h3 { font-size: 108%;   /* 14px */ }
+
+ol, ul, dd { padding-left: 2em; }
+
+table { font-size: inherit; font: 100%; border-collapse: collapse; border-spacing: 0; }
+
+input, select, button, textarea { font-size: 99%; font-family: Arial, Helvetica, Clean, sans-serif; padding: 2px 4px; }
+input[type=text], input[type=password], textarea { /** 160px */ width: 12.25em; *width: 11.9em; }
+
+abbr, acronym { border-bottom: 1px dotted #000; cursor: help; }
