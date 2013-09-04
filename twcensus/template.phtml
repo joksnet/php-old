@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>TwCensus: Une recensement de Twitter en France</title>
+<link rel="shortcut icon" href="<?php echo TwCensus::$base; ?>/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="<?php echo TwCensus::$base; ?>/twcensus.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://axe.mappy.com/1v1/init/get.aspx?auth=<?php echo $this->mappy->getToken(); ?>&version=2.01&solution=ajax"></script>
+<script type="text/javascript" src="<?php echo TwCensus::$base; ?>/twcensus.js"></script>
+<script type="text/javascript">
+$(function()
+{
+    TwCensus.init({root:'<?php echo TwCensus::$base; ?>',country:<?php echo TwCensus::$config['country']; ?>});
+<?php if ( $this->twitter->connected() ) : ?>
+    TwCensus.initMapMarker([<?php echo $this->get('x', 0); ?>, <?php echo $this->get('y', 0); ?>]);
+<?php elseif ( null !== $this->area ) : ?>
+    TwCensus.initMapListArea('<?php echo $this->area ? $this->area['code'] : ''; ?>');
+<?php else : ?>
+    TwCensus.initMapList();
+<?php endif; ?>
+});
+</script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      <div class="block map">
+<?php if ( null !== $this->area ) : ?>
+<?php if ( $this->area ) : ?>
+        <h3><?php echo $this->area['name']; ?>:</h3>
+<?php else : ?>
+        <h3>R&eacute;gion non trouv&eacute;e</h3>
+<?php endif; ?>
+<?php endif; ?>
+        <div id="map"></div>
+<?php if ( null !== $this->area ) : ?>
+        <p class="footer"><a href="<?php echo TwCensus::$base; ?>">Revenir</a></p>
+<?php endif; ?>
+      </div>
+    </div>
+    <div id="container">
+      <div class="block header">
+        <h1><a href="<?php echo TwCensus::$base; ?>/"><span>Twitter Census</span></a></h1>
+        <div class="message">
+          <a href="http://twitter.com/TwCensus">
+            <img src="<?php echo TwCensus::$base; ?>/images/twitter.png" alt="Twitter" />
+          </a>
+          <p>TwCensus a pour objectif de r&eacute;unir la communaut&eacute; Twitter en France.</p>
+        </div>
+      </div>
+<?php if ( $this->twitter->connected() ) : ?>
+      <div class="block data">
+        <h3>Bienvenue <?php echo $this->twitter->getUserName(); ?>:</h3>
+        <p>D&eacute;placez le curseur vert sur la carte jusqu'&agrave; indiquer votre situation g&eacute;ographique.</p>
+<?php if ( Request::hasQuery('saved') ) : ?>
+        <p class="success">Vos donn&eacute;es ont &eacute;t&eacute; enregistr&eacute;es. <a href="http://twitter.com/home?status=Je+me+suis+inscrit+sur+@TwCensus.+Faites-le+vous+aussi.+http://joksnet.me/twcensus/">Parlez-en &agrave; vos amis</a>!</p>
+<?php endif; ?>
+        <p class="warning hidden" id="warning_country">Sont seulement accept&eacute;s les utilisateurs en France.</p>
+        <form action="<?php echo TwCensus::$base; ?>/" method="post">
+          <dl>
+            <dt>R&eacute;gion</dt>
+            <dd>
+              <span id="area_label">&nbsp;</span>
+            </dd>
+
+            <dt>Ville</dt>
+            <dd>
+              <span id="locality_label">&nbsp;</span>
+            </dd>
+
+            <dt>Sexe</dt>
+            <dd>
+              <input type="radio" class="radio" name="sex" id="masculin" value="m"<?php echo ( 'm' == $this->get('sex', '0') ) ? ' checked="checked"' : ''; ?> /><label for="masculin">Masculin</label>
+              <input type="radio" class="radio" name="sex" id="feminin" value="f"<?php echo ( 'f' == $this->get('sex', '0') ) ? ' checked="checked"' : ''; ?> /><label for="feminin">F&eacute;minin</label>
+            </dd>
+
+            <dt><label for="age">&Acirc;ge</label></dt>
+            <dd>
+              <input type="text" name="age" id="age" value="<?php echo $this->get('age', ''); ?>" maxlength="3" />
+              <em>(inscrire z&eacute;ro si vous ne voulez pas fournir cette information)</em>
+            </dd>
+          </dl>
+          <p class="submit">
+            <input type="hidden" name="address" id="address" value="<?php echo $this->get('address', ''); ?>" />
+            <input type="hidden" name="country" id="country" value="<?php echo $this->get('country', ''); ?>" />
+            <input type="hidden" name="country_name" id="country_name" value="<?php echo $this->get('country_name', ''); ?>" />
+            <input type="hidden" name="country_iso" id="country_iso" value="<?php echo $this->get('country_iso', ''); ?>" />
+            <input type="hidden" name="area" id="area" value="<?php echo $this->get('area', ''); ?>" />
+            <input type="hidden" name="area_name" id="area_name" value="<?php echo $this->get('area_name', ''); ?>" />
+            <input type="hidden" name="locality" id="locality" value="<?php echo $this->get('locality', ''); ?>" />
+            <input type="hidden" name="locality_name" id="locality_name" value="<?php echo $this->get('locality_name', ''); ?>" />
+            <input type="hidden" name="coord_x" id="coord_x" value="<?php echo $this->get('x', '0'); ?>" />
+            <input type="hidden" name="coord_y" id="coord_y" value="<?php echo $this->get('y', '0'); ?>" />
+            <input type="hidden" name="save" id="save" value="1" />
+            <input type="image" src="<?php echo TwCensus::$base; ?>/images/button-save.png" value="Enregister" />
+            <span>
+              ou <a href="<?php echo TwCensus::$base; ?>/?destroy">D&eacute;connexion</a>
+            </span>
+          </p>
+        </form>
+      </div>
+<?php else : ?>
+      <div class="block connect">
+        <p>Pour participer au projet, identifiez-vous sur Twitter et suivez les diff&eacute;rentes &eacute;tapes.</p>
+        <p>
+          <a href="<?php echo $this->twitter->getAuthorizationUrl(); ?>">
+            <img src="<?php echo TwCensus::$base; ?>/images/button-signin.png" alt="S'identifier avec Twitter" />
+          </a>
+        </p>
+      </div>
+<?php endif; ?>
+<?php if ( $last = $this->last() ) : ?>
+      <div class="block users">
+        <h3>Les membres qui se sont r&eacute;cemment unis:</h3>
+        <ul>
+<?php foreach ( $last as $user ) : ?>
+          <li><a href="http://twitter.com/<?php echo $user['username']; ?>"><img src="<?php echo $user['image']; ?>" alt="<?php echo $user['username']; ?>" /></a></li>
+<?php endforeach; ?>
+        </ul>
+        <div class="clear"><!-- --></div>
+      </div>
+<?php endif; ?>
+    </div>
+    <div id="footer">
+      <p>&copy; <a href="<?php echo TwCensus::$base; ?>/about.html">TwCensus</a> 2010</p>
+    </div>
+  </div>
+</body>
+</html>

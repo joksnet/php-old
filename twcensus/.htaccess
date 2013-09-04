@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule ^kml/([\d]+)$ index.php?kml=$1 [QSA,L]
+RewriteRule ^kml/([\d]+)/([\w\d-]+)$ index.php?kml=$1&area=$2 [QSA,L]
+RewriteRule ^kml/([\d]+)/([\w\d-]+)/page([\d]+)$ index.php?kml=$1&area=$2&page=$3 [QSA,L]
+
+RewriteRule ^([\w\d-]+)$ index.php?area=$1 [QSA,L]

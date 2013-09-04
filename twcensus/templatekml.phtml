@@ -1,0 +1,125 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n"; ?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+  <Document>
+<?php if ( $this->kmlVisible ) : ?>
+    <name><![CDATA[<?php echo $this->kmlVisible['name']; ?>]]></name>
+<?php else : ?>
+    <name><![CDATA[ROOT]]></name>
+<?php endif; ?>
+    <Style id="invisible">
+      <LineStyle>
+        <color>00000000</color>
+        <width>0</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>00000000</color>
+      </PolyStyle>
+    </Style>
+    <Style id="visible">
+      <LineStyle>
+        <color>cc2d3939</color>
+        <width>2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>33EEEEEE</color>
+      </PolyStyle>
+    </Style>
+<?php if ( $this->kmlVisible ) : ?>
+    <Placemark id="<?php echo $this->kmlVisible['code']; ?>">
+      <name><![CDATA[<?php echo $this->kmlVisible['name']; ?>]]></name>
+      <styleUrl>#invisible</styleUrl>
+<?php if ( isset($this->kmlVisible['count']) && isset($this->kmlVisible['page']) && isset($this->kmlVisible['pages']) ) : ?>
+      <ExtendedData>
+        <Data name="count">
+          <value><?php echo $this->kmlVisible['count']; ?></value>
+        </Data>
+        <Data name="page">
+          <value><?php echo $this->kmlVisible['page']; ?></value>
+        </Data>
+        <Data name="pages">
+          <value><?php echo $this->kmlVisible['pages']; ?></value>
+        </Data>
+      </ExtendedData>
+<?php endif; ?>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <tessellate>1</tessellate>
+            <coordinates><?php echo $this->kmlVisible['coordinates']; ?></coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+<?php endif; ?>
+<?php if ( $this->kmlInvisible ) : ?>
+<?php foreach ( $this->kmlInvisible as $placemark ) : ?>
+    <Placemark id="<?php echo $placemark['code']; ?>">
+      <name><![CDATA[<?php echo $placemark['name']; ?>]]></name>
+      <ExtendedData>
+<?php if ( isset($placemark['total']) ) : ?>
+        <Data name="total">
+          <value><?php echo $placemark['total']; ?></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['sex']) ) : ?>
+        <Data name="sex">
+          <value><?php echo $placemark['sex']; ?></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['age']) ) : ?>
+        <Data name="age">
+          <value><?php echo ( $placemark['age'] ) ? number_format($placemark['age'], 0, ',', '.') : '0'; ?></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['location']) ) : ?>
+        <Data name="location">
+          <value><![CDATA[<?php echo utf8_decode($placemark['location']); ?>]]></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['description']) ) : ?>
+        <Data name="description">
+          <value><![CDATA[<?php echo utf8_decode($placemark['description']); ?>]]></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['image']) ) : ?>
+        <Data name="image">
+          <value><![CDATA[<?php echo $placemark['image']; ?>]]></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['url']) ) : ?>
+        <Data name="url">
+          <value><?php echo $placemark['url']; ?></value>
+        </Data>
+<?php endif; ?>
+<?php if ( isset($placemark['id_locality']) ) : ?>
+        <Data name="locality">
+          <value><?php echo $placemark['id_locality']; ?></value>
+        </Data>
+        <Data name="locality_code">
+          <value><?php echo $placemark['locality_code']; ?></value>
+        </Data>
+        <Data name="locality_name">
+          <value><![CDATA[<?php echo utf8_decode($placemark['locality_name']); ?>]]></value>
+        </Data>
+<?php endif; ?>
+      </ExtendedData>
+<?php if ( strpos($placemark['coordinates'], ' ') === false ) : ?>
+      <Point>
+        <coordinates><?php echo $placemark['coordinates']; ?></coordinates>
+      </Point>
+<?php else : ?>
+      <styleUrl>#visible</styleUrl>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <tessellate>1</tessellate>
+            <coordinates><?php echo $placemark['coordinates']; ?></coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+<?php endif; ?>
+    </Placemark>
+<?php endforeach; ?>
+<?php endif; ?>
+  </Document>
+</kml>
