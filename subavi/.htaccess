@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteRule ^subavi-(.+).zip$ /source.php?file=$1 [NC]
+
+RewriteRule ^(\d+).html$ /view.php?id=$1 [NC]
+RewriteRule ^d/(\d+).html$ /download.php?id=$1 [NC]
+RewriteRule ^q/(\d+).html$ /results.php?id=$1 [NC]
+RewriteRule ^u/(.+).html$ /users.php?name=$1 [NC]
+
+RewriteRule ^index.html$ /index.php [NC]
+RewriteRule ^upload.html$ /upload.php [NC]
+RewriteRule ^script.html$ /script.php [NC]
+
+RewriteRule ^$ /index.php?letter=1 [NC]
