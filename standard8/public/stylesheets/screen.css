@@ -1,0 +1,86 @@
+* { padding: 0px; margin: 0px; }
+
+body { background-color: #E5E5E5; cursor: default; font: 12px 'Lucida Grande', Verdana, sans-serif; overflow: auto; }
+body a:link, body a:visited { color: #CC4600; text-decoration: none; }
+body a:hover, body a:active { color: #007A99; }
+body a img { border: 0pt; }
+
+body form#login { width: 500px; padding: 10px 0pt 0pt 90px; }
+
+body form { padding: 0pt 20px; }
+body form .messages { background: #FFF4C2 /* #EAFBFB */ url('/@@/information') no-repeat 5px 7px; padding: 8px; border: 1px solid /* #ABEFEF */ #FFCC34; }
+body form .messages ul { color: #555; }
+body form .messages ul li { list-style: none; margin-left: 20px; }
+body form .messages ul li label { color: /* #D82780 */ #555; font: 14px Tahoma, Arial, Verdana, sans-serif; font-variant: small-caps; letter-spacing: 0.04em; }
+body form .messages ul li label[for]:hover { color: #000; cursor: pointer; text-decoration: underline; }
+body form .messages ul li.hidden { display: none; }
+body form .messages a.dismiss { cursor: pointer; float: right; }
+body form fieldset { padding: 8px; margin: 0pt 0pt 8px; border: 1px solid #E0E0E0; }
+body form fieldset legend { margin-left: 5px; padding: 0pt 2px 0pt 2px; }
+body form fieldset legend img { margin-right: 0.5em; }
+body form dl { margin-top: 10px; }
+body form dl dt { width: 100px; float: left; }
+body form dl dt label { font-size: 13px; }
+body form dl dd { margin: 0pt 0pt 5px 100px; }
+body form dl dd input {}
+body form dl dd input, body form dl dd textarea, body form dl dd select { padding: 2px; background-color: #F9F9F9; border: 1px solid #DDD; color: #0B2E05; }
+body form dl dd textarea { overflow: auto; }
+body form dl dd input[type="submit"], body form dl dd input[type="button"], body form dl dd input[type="reset"], body .button { background-color: #FFF; border-right: 1px solid #AAA; border-top: 1px solid #EEE; border-left: 1px solid #EEE; border-bottom: 1px solid #AAA; padding: 0.2em 0.5em 0.1em; margin-right: 0.5em; cursor: pointer; }
+body form dl dd input[type="checkbox"] { margin: 6px 0px 0px 0px; }
+body form dl dd select option { padding-left: 2px; }
+body form dl dd select optgroup { color: #777; font-style: normal; font-weight: 500; }
+body form dl dd select optgroup option { padding-left: 10px; color: #004799; }
+body form dl dd input:focus, body form dl dd textarea:focus, body form dl dd select:focus { background-color: #FAFAFF; border: 1px solid #D6D6FF; color: #004799; }
+body form dl dd .required:focus, body form dl dd input.error { background-color: #FDF7FA; border: 1px solid #E085B8; color: #111; }
+body form dl dd input.spin { padding: 2px 20px 1px 2px; background: #FFF url('/images/spin-button.gif') no-repeat 98% 1px; }
+body form dl dd input.spin.up { cursor: pointer; background-position: 98% -17px; }
+body form dl dd input.spin.down { cursor: pointer; background-position: 98% -35px; }
+body form dl dd span.error { margin-left: 10px; color: #DB1F22; font-size: 12px; }
+body form dl dd img.error { float: left; padding-right: 5px; padding-top: 2px; }
+
+div.location { height: 24px; background-color: #AFDB1F; color: #FFF; font-size: 10px; font-weight: bold; width: 100%; border-bottom: 1px solid #799916; }
+div.location strong { background: transparent url('/images/locationbar-bg.gif') no-repeat -1100px 0px; display: block; float: left; margin-right: -1px; margin-top: -2px; padding: 6px 0pt 6px 10px; }
+div.location a { color: #000; }
+div.location ul { display: inline; float: left; }
+div.location ul li { position: relative; float: left; list-style-type: none; }
+div.location ul li.unlinked { color: #83AD23; }
+div.location ul li.image a em { padding-left: 37px; }
+div.location ul li.image a em img { float: left; position: absolute; left: 18px; top: 3px; }
+div.location ul li a { background: transparent url('/images/locationbar-bg.gif') no-repeat -1000px 0px; display: block; float: left; margin-right: -16px; position: relative; white-space: pre; left: auto; }
+div.location ul li a em { background: transparent url('/images/locationbar-nodrop.gif') no-repeat right top; cursor: pointer; display: block; float: left; font-style: normal; padding: 6px 27px 6px 22px; color: #000; }
+div.location ul li a:hover, div.location ul li.selected a, div.location ul li:hover a { background-position: 0px; }
+div.location ul li.drop a em { background-image: url('/images/locationbar-drop.gif'); }
+div.location ul li ul { position: absolute; left: -999em; top: 24px; border: 1px solid #799916; background-color: #AFDB1F /* #C8EF48 */; list-style: none; }
+div.location ul li ul li { display: block; float: none; padding: 0pt; }
+div.location ul li ul li a { background-image: none; float: none; margin: 0px; }
+div.location ul li ul li a:hover { background-color: #C8EF48; }
+div.location ul li ul li a em { background-image: none; float: none; }
+div.location ul li.drop ul li a em { background-image: none; }
+div.location ul li ul li a:hover em { float: none; }
+div.location ul li.selected ul, div.location ul li:hover ul { left: 0px; }
+div.location .logout { float: right; margin: 5px 10px 0pt 0pt; }
+div.location .logout a { position: relative; }
+div.location .logout a img { position: absolute; left: -19px; top: -1px; }
+
+div.sidebar { left: 0px; /* background: #E5E5E5 url('/images/background.png') repeat-y scroll left center; */ float: right; padding: 0pt; position: relative; width: 193px; }
+div.sidebar ul.nav { font-size: 14px; }
+div.sidebar ul.nav li { list-style: none; margin: 0pt 0pt 1px; }
+div.sidebar ul.nav li.hidden { display: none; }
+div.sidebar ul.nav li a, div.sidebar ul.nav li.selected span { color: #009933; font-weight: bold; text-decoration: none; display: block; padding: 5px 5px 5px 15px; }
+div.sidebar ul.nav li.selected span, div.sidebar ul.nav li a:hover, div.sidebar ul.nav li a.hover { background-color: #AAA; color: #FFF; }
+div.sidebar ul.nav li.line { background: url('/images/line.gif') repeat-x scroll left 60%; padding: 2px 0px 2px 0px; }
+div.sidebar ul.nav li.line span { background-color: #E5E5E5; font-size: 10px; margin-left: 20px; padding: 0px 2px 0px 2px; }
+
+div.container { background: #FFF url('/images/background.png') repeat-y scroll right center; margin-right: 185px; }
+
+div.container div.title-nav { background: transparent url('/images/title-nav-bg.gif') repeat-x left bottom; font-size: 1em; height: 29px; line-height: 2.4em; padding: 1.5em 20px 0pt 20px; margin-bottom: 1em; margin-right: 8px; }
+div.container div.title-nav h1 { float: left; }
+div.container div.title-nav ul { list-style-type: none; }
+div.container div.title-nav ul li { background: #FFF url('/images/title-nav-li.gif') repeat-x left bottom; display: block; margin: -1px 5px 0px 0px; padding: 0px 1em; border: 1px solid #AAA; border-bottom: 0pt; float: right; height: 29px; }
+div.container div.title-nav ul li.active { background-image: none; color: #333; border-bottom: 2px solid #FFF; margin-top: -3px; }
+div.container div.title-nav ul li a { text-decoration: none; }
+div.container div.title-nav ul li span {  }
+div.container div.title-nav ul li span img { float: left; margin: 5px 5px 0px 0px; }
+div.container div.title-nav br { clear: left; }
+
+div.bottom { background: #FFF url('/images/background-bottom.gif') no-repeat scroll right top; height: 7px; margin-top: 10px; }
