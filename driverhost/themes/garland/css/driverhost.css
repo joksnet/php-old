@@ -1,0 +1,6 @@
+
+a.network { float: left; width: 176px; text-align: center; margin: 0 0 10px; padding: 4px; }
+a.network label { display: block; cursor: pointer; }
+a.network:hover { border: 1px solid red; padding: 3px; text-decoration: none; }
+
+a.logout { color: red !important; }

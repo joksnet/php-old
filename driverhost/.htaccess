@@ -1,0 +1,20 @@
+
+Options -Indexes
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    RewriteRule ^login$ /login.php [NC]
+    RewriteRule ^logout$ /logout.php [NC]
+
+    RewriteRule ^register$ /register.php [NC]
+    RewriteRule ^register-success$ /register-success.php [NC]
+    RewriteRule ^lostpassword$ /lostpassword.php [NC]
+
+    RewriteRule ^networks$ /networks.php [NC]
+    RewriteRule ^networks/add$ /networks.php?action=add [NC]
+    RewriteRule ^networks/(\d+)$ /networks.php?n=$1 [NC]
+    RewriteRule ^networks/(\d+)/edit$ /networks.php?n=$1&action=edit [NC]
+    RewriteRule ^networks/(\d+)/delete$ /networks.php?n=$1&action=delete [NC]
+</IfModule>
