@@ -1,0 +1,11 @@
+
+div#wrap form select,
+div#wrap form input { height: 32px; }
+div#wrap form input.submit { padding: 5px 0; }
+
+div#wrap div#header ul#tabs { bottom: -3px; }
+div#wrap div#header ul#tabs li a { margin: 0 1px; }
+
+div#wrap dl dd select { width: 60%; }
+
+div#wrap div#container div#content div#page div.company div.column { width: 31%; }
