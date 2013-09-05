@@ -1,0 +1,97 @@
+body, * { margin: 0; padding: 0; }
+body { text-align: center; padding: 18px; font-size: 0.8em; font-family: Arial, serif; }
+/* body { background: url('http://s3.amazonaws.com/twitter_production/profile_background_images/2239252/background.png'); } */
+body { background: url('background.png'); }
+
+a { color: #cc0000; text-decoration: none; outline: 0; }
+a:hover { color: #008000; }
+a img { border: 0; }
+
+div#wrap { width: 783px; text-align: left; margin: 0 auto; }
+
+div#wrap div#header { height: 68px; }
+div#wrap div#header h1 a { float: left; background: url('cdiv.gif') no-repeat; width: 124px; height: 58px; text-indent: -999px; }
+
+div#wrap div#header div#nav { float: right; }
+div#wrap div#header div#nav ul { list-style-type: none; margin: 44px 10px 0 0; }
+div#wrap div#header div#nav ul li { float: left; }
+div#wrap div#header div#nav ul li a { display: block; padding: 5px 10px; margin: 0 1px; color: white; text-decoration: none; }
+div#wrap div#header div#nav ul li a.current,
+div#wrap div#header div#nav ul li a:hover { background-color: #f9f9f9; color: #555; }
+
+div#wrap div#container div.clear { clear: both; }
+
+div#wrap div#container div#content { background-color: #f9f9f9; padding: 8px; }
+div#wrap div#container div#content p { margin-bottom: 10px; }
+div#wrap div#container div#content h2 { color: #cc0000; border-bottom: 1px solid #eee; margin: 10px 0 5px 0; }
+div#wrap div#container div#content h3 { margin: 10px 0 0 0; border-bottom: 1px solid #eee; }
+
+div#wrap div#container div#content dl.left { float: left; }
+div#wrap div#container div#content dl.right { margin-left: 345px; }
+
+div#wrap div#container div#content dl.form span { color: #cc0000; }
+div#wrap div#container div#content dl.form dt { margin: 0 0 2px 0; }
+div#wrap div#container div#content dl.form dd { margin: 0 0 10px 0; }
+div#wrap div#container div#content dl.form dd input { padding: 5px; height: 30px; }
+div#wrap div#container div#content dl.form dd input[type="text"] { height: auto; }
+div#wrap div#container div#content dl.form dd input[type="file"] { height: 22px; }
+div#wrap div#container div#content dl.form dd input.submit { height: auto; }
+div#wrap div#container div#content dl.form dd input#name { width: 200px; }
+div#wrap div#container div#content dl.form dd input#email,
+div#wrap div#container div#content dl.form dd input#url,
+div#wrap div#container div#content dl.form dd input#tags { width: 320px; }
+div#wrap div#container div#content dl.form dd textarea { padding: 5px; width: 418px; height: 192px; overflow: auto; }
+div#wrap div#container div#content dl.form dd textarea[cols] { width: 408px; }
+
+div#wrap div#container div#content dl.form dd div.vote { float: left; margin: 0 10px 0 0; }
+div#wrap div#container div#content dl.form dd div.vote input { position: relative; top: 5px; }
+div#wrap div#container div#content dl.form dd div.vote img { position: relative; top: 1px; }
+div#wrap div#container div#content dl.form dd div.vote img[src] { top: -3px; }
+
+div#wrap div#container div#content div.screen { padding: 5px; border: 1px solid #cc0000; }
+div#wrap div#container div#content div.screen-small { float: left; }
+div#wrap div#container div#content div.screen-orig { overflow: auto; margin: 0 0 5px 0; }
+
+div#wrap div#container div#content div.info { margin: 5px 0 5px 340px; }
+div#wrap div#container div#content div.info dl dt { float: left; width: 90px; }
+div#wrap div#container div#content div.info dl dd { margin-bottom: 5px; }
+
+div#wrap div#container div#content ol.thumbs { list-style-type: none; margin: 5px 0; }
+div#wrap div#container div#content ol.thumbs li { float: left; }
+div#wrap div#container div#content ol.thumbs li a { display: block; padding: 3px; /* border: 1px solid #eee; */ margin: 0 0px 3px 0; }
+div#wrap div#container div#content ol.thumbs li a:hover { border: 1px solid #cc0000; padding: 2px; }
+
+div#wrap div#container div#content div.columnright { width: 220px; float: right; }
+div#wrap div#container div#content div.columnleft { width: 530px; }
+
+div#wrap div#container div#content ol.list { list-style-type: none; }
+div#wrap div#container div#content ol.list li { min-height: 75px; margin: 0 0 5px 0; }
+div#wrap div#container div#content ol.list li div.screen { border-color: #ccc; }
+div#wrap div#container div#content ol.list li div.info { margin: -12px 0 0 125px; }
+div#wrap div#container div#content ol.list li div.info[class] { margin-top: 3px; }
+div#wrap div#container div#content ol.list li div.info h4 { font-size: 110%; }
+div#wrap div#container div#content ol.list li div.info h5 { margin: 2px 0 0 0; font-weight: 500; }
+div#wrap div#container div#content ol.list li div.info ol.tags { margin: 5px 0 0 0; }
+div#wrap div#container div#content ol.list li div.clear { clear: left; }
+
+div#wrap div#container div#content ol.tags { list-style-type: none; background-color: #ddd; }
+div#wrap div#container div#content ol.tags li { display: inline; padding: 0 5px 0 6px; border-left: 2px solid white; }
+div#wrap div#container div#content ol.tags li.first { border-left: 0; }
+div#wrap div#container div#content ol.tags a { padding: 3px; color: #444; }
+div#wrap div#container div#content ol.tags a:hover { color: #666; }
+
+div#wrap div#container div#content ol.comments { list-style-type: none; margin: 5px 0; }
+div#wrap div#container div#content ol.comments li div.author { float: left; }
+div#wrap div#container div#content ol.comments li div.author img { float: left; }
+div#wrap div#container div#content ol.comments li div.author ul { list-style-type: none; margin-left: 50px; }
+div#wrap div#container div#content ol.comments li div.author ul li { padding: 0 0 5px 0; }
+div#wrap div#container div#content ol.comments li div.author ul li.name { font-weight: 700; }
+div#wrap div#container div#content ol.comments li div.comment { margin-left: 160px; margin-top: -15px; }
+div#wrap div#container div#content ol.comments li div.comment[class] { margin-top: 0; }
+div#wrap div#container div#content ol.comments li div.comment p { font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; margin-bottom: 10px; line-height: 16px; }
+
+div#wrap div#footer { margin: 10px 0; }
+div#wrap div#footer ul, div#wrap div#footer p { font-size: 97%; color: white; }
+div#wrap div#footer ul { list-style-type: none; }
+div#wrap div#footer ul li { display: inline; padding: 0 5px 0 6px; border-left: 1px solid white; }
+div#wrap div#footer ul li.first { border-left: 0; }

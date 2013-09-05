@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteRule ^post$ /post.php [NC]
+
+RewriteRule ^tag/(.+)$ /tag.php?t=$1 [NC]
+
+RewriteRule ^([a-zA-Z0-9]{32}+)/screen$ /screen.php?i=$1 [NC]
+RewriteRule ^([a-zA-Z0-9]{32}+)$ /error.php?i=$1 [NC]
+
+RewriteRule ^img/([a-zA-Z0-9]{32}+)$ /img.php?i=$1 [NC]
+RewriteRule ^img/([a-zA-Z0-9]{32}+)/(orig|small|thumb)$ /img.php?i=$1&t=$2 [NC]
+
+ErrorDocument 404 /screen.php?i=rand
