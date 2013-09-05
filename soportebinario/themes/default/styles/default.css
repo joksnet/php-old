@@ -1,0 +1,146 @@
+
+body, * { margin: 0; padding: 0; }
+body { background-color: #eef0f0; color: #222; font-size: 14px; font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; text-align: center; padding-bottom: 16px; }
+
+div#wrap { text-align: left; margin: 0 auto; width: 960px; background: white url('/themes/default/images/bg.gif') repeat-y; }
+div#wrap div#bottom { background: white url('/themes/default/images/bg-bottom.gif') no-repeat; height: 14px; }
+
+div#wrap a { padding: 2px; color: #195190; }
+div#wrap a.red { color: red; }
+div#wrap a.red:hover { color: white; background-color: red; text-decoration: none; }
+div#wrap a.grey { color: #666; }
+div#wrap a.grey:hover { color: white; background-color: #666; text-decoration: none; }
+
+div#wrap.install { background-image: none; width: 400px; border: 10px solid #ccc; margin-top: 60px; padding: 10px; }
+div#wrap.install h2 { color: #333; font-size: 14px; margin-bottom: 10px; }
+
+div#wrap p { margin-bottom: 8px; }
+
+div#wrap div.left { float: left; }
+div#wrap div.right { float: left; }
+div#wrap div.clear { clear: both; }
+
+div#wrap form { background-color: #eef0f0; padding: 0 6px 4px 6px; }
+div#wrap form input, div#wrap form textarea { border: 1px solid #ddd; border-left-width: 2px; border-left-color: #3366cc; border-top-color: #bbb; padding: 2px; height: 22px; }
+div#wrap form div > input, div#wrap form dl dd > input { height: 16px; padding: 3px; }
+div#wrap form textarea { height: auto; }
+div#wrap form input.submit { margin-top: 5px; padding: 2px 10px; border-left-color: #3366cc; border-top-color: #ddd; border-bottom-color: #bbb; border-right-color: #bbb; background-color: white; padding-left: 0; padding-right: 0; }
+div#wrap form div > input.submit, div#wrap form dl dd > input.submit { height: auto; padding-left: 4px; padding-right: 4px; }
+
+div#wrap div#nav { background-color: #47484a; height: 27px; margin: 0 7px; }
+div#wrap div#nav div#nav-left { display: inline; float: left; }
+div#wrap div#nav div#nav-left ul { overflow: hidden; padding-left: 10px; }
+div#wrap div#nav div#nav-left ul li { list-style-type: none; float: left; font-size: 12px; font-weight: 700; margin: auto 7px; }
+div#wrap div#nav div#nav-left ul li a { color: #ddd; display: block; float: left; overflow: hidden; text-align: center; text-decoration: none; padding: 6px; letter-spacing: 1px; }
+div#wrap div#nav div#nav-left ul li.active a, div#wrap div#nav div#nav-left ul li a:hover { color: white; background-color: black; }
+div#wrap div#nav div#nav-right { display: inline; float: right; color: #f8a83c; font-weight: 700; padding: 4px 15px 0 0; font-size: 11px; position: relative; top: 2px; }
+div#wrap div#nav div#nav-right a { color: white; text-decoration: none; }
+div#wrap div#nav div#nav-right a:hover { border-bottom: 1px solid white; }
+
+div#wrap div#header { border-bottom: 3px solid #81a2c1; margin: 0 7px; height: 56px; }
+div#wrap div#header h1 { float: left; width: 260px; height: 36px; background: url('/themes/default/images/soportebinario.gif') no-repeat; margin: 10px 0 10px 15px; }
+div#wrap div#header h1 span { display: none; }
+div#wrap div#header div#tagline { float: left; border-left: 2px solid #ccc; margin: 30px 0 0 15px; padding-left: 5px; color: #666; font-size: 11px; }
+div#wrap div#header div#search { float: right; }
+
+div#wrap div#container { clear: left; margin: 0 7px; }
+div#wrap div#container div.breadcrumb { font-size: 11px; margin: 5px 0 0 10px; }
+
+div#wrap div#container div.image { padding: 5px; border: 2px solid #ccc; width: 120px; height: 100px; background-color: white; }
+div#wrap div#container div.image img { width: 100%; }
+
+div#wrap div#container div#company { margin: 10px 0; padding: 5px 15px; background-color: #eef0f0; }
+div#wrap div#container div#company div.image { float: left; }
+div#wrap div#container div#company div.info { float: left; width:270px; margin: 0 0 0 15px; }
+div#wrap div#container div#company div.info h1 a { color: black; text-decoration: none; font-weight: 500; }
+div#wrap div#container div#company div.info span { display: block; }
+div#wrap div#container div#company form { float: right; width: 480px; padding: 5px 0 5px 10px; }
+div#wrap div#container div#company form div { height: 105px; border: 0; }
+div#wrap div#container div#company form div label { display: block; font-size: 17px; font-family: Arial, sans-serif; font-weight: 700; padding: 2px 0 2px 0; }
+div#wrap div#container div#company form div textarea { margin-right: 0; overflow: auto; padding: 4px 3px; height: 78px; background-color: white; border: 3px solid #ccc; border-right: 0; }
+div#wrap div#container div#company form div > textarea { height: 64px; }
+html&gt;body div#wrap div#container div#company form div textarea { position: relative; top: -8px; }
+div#wrap div#container div#company form div input.submit { margin: 0; padding: 0; border: 0 !important; height: auto; position: relative; top: 4px; }
+div#wrap div#container div#company form div > input.submit { top: 3px; }
+
+div#wrap div#container div#content { float: left; width: 60%; }
+div#wrap div#container div#content h2 { color: #40454f; font-size: 1.4em; font-weight: 700; margin: 14px 0 0 14px; }
+div#wrap div#container div#content p { font-size: 0.9em; margin: 14px 0 0 14px; }
+div#wrap div#container div#content ul { list-style-type: square; margin: 14px 0 0 34px; }
+div#wrap div#container div#content ul li { font-size: 0.9em; padding: 2px; }
+
+div#wrap div#container div#content div.tabs { margin: -15px 0 8px 14px; border-bottom: 1px solid #eee; text-align: right; padding: 0 5px 3px 0; font-size: 11px; }
+div#wrap div#container div#content div.tabs ul { list-style-type: none; margin: 0; }
+div#wrap div#container div#content div.tabs li { display: inline; padding: 0 5px; }
+div#wrap div#container div#content div.tabs li a { text-decoration: none; }
+div#wrap div#container div#content div.tabs li a:hover { text-decoration: underline; }
+div#wrap div#container div#content div.tabs li.active a { background-color: white; border: 1px solid #eee; border-bottom: 0; border-right: 1px solid #ccc; color: #41a541; cursor: default; padding: 4px 7px; }
+
+div#wrap div#container div#content div.listing { margin: 0 0 15px 20px; }
+div#wrap div#container div#content div.listing ul { list-style-type: none; margin: 0; }
+div#wrap div#container div#content div.listing ul li { padding: 16px 0 16px 20px; border-bottom: 2px solid #eee; }
+div#wrap div#container div#content div.listing ul li.pregunta { background: url('/themes/default/images/preguntas.gif') no-repeat 0 18px; }
+div#wrap div#container div#content div.listing ul li.idea { background: url('/themes/default/images/ideas.gif') no-repeat 0 18px; }
+div#wrap div#container div#content div.listing ul li.problema { background: url('/themes/default/images/problemas.gif') no-repeat 0 18px; }
+
+div#wrap div#container div#content div.listing ul li div.info { float: right; font-size: 12px; text-align: right; }
+div#wrap div#container div#content div.listing ul li div.info span { display: block; font-size: 13px; }
+div#wrap div#container div#content div.listing ul li div.info span.respuestas strong { color: #237b9a; }
+div#wrap div#container div#content div.listing ul li div.info span.seguidores strong { color: #db0303; }
+
+div#wrap div#container div#content div.listing ul li h3 { margin-right: 110px; font-size: 16px; }
+div#wrap div#container div#content div.listing ul li h3 a { color: #eee; text-decoration: underline; font-weight: 500; }
+div#wrap div#container div#content div.listing ul li h3 a span { color: #195190; font-weight: 700; text-decoration: none; }
+div#wrap div#container div#content div.listing ul li div.creator { margin: 5px 10px 0 10px; }
+
+div#wrap div#container div#content div.listing div.pagination { clear: both; text-align: center; margin-top: 15px; }
+div#wrap div#container div#content div.listing div.pagination a { padding: 0.2em 0.5em; margin-right: 0.1em; text-decoration: none; border: 1px solid #9aafe5; font-size: 13px; }
+div#wrap div#container div#content div.listing div.pagination a:hover { border-color: #2e6ab1; }
+div#wrap div#container div#content div.listing div.pagination a.active { border: 1px solid #2e6ab1; font-weight: 700; background-color: #2e6ab1; color: white; }
+
+div#wrap div#container div#content form dl { padding: 7px 0 14px 0; }
+div#wrap div#container div#content form dl dt { margin: 7px 0 0 0; }
+div#wrap div#container div#content form dl dt label { font-size: 1.1em; font-weight: 700; color: #444; font-family: Arial, sans-serif; }
+
+div#wrap div#container div#sidebar { float: right; width: 35%; }
+div#wrap div#container div#sidebar div { clear: both; padding: 2.5em 20px 0 0; }
+div#wrap div#container div#sidebar h4 { color: #666; font-size: 1.1em; margin-bottom: 1em; font-weight: 700; line-height: 1.1em; }
+
+div#wrap div#container div#sidebar ul#filter { border: 3px dotted #666; padding: 10px 12px; float: left; }
+div#wrap div#container div#sidebar ul#filter li { height: 20px; float: left; list-style-type: none; margin: 3px; font-size: 12px; width: 120px; }
+div#wrap div#container div#sidebar ul#filter li img { position: relative; top: 3px; }
+div#wrap div#container div#sidebar ul#filter li a { font-size: 13px; margin-left: 2px; }
+div#wrap div#container div#sidebar ul#filter li.active a { color: #666; text-decoration: none; }
+
+div#wrap div#container div#sidebar div#newlist { /* clear: both; padding: 2.5em 20px 0 0; */ }
+div#wrap div#container div#sidebar div#newlist ul { list-style-type: none; }
+div#wrap div#container div#sidebar div#newlist ul li { padding: 5px 3px 5px 21px; }
+div#wrap div#container div#sidebar div#newlist ul li.pregunta { background: #e2f4f8 url('/themes/default/images/preguntas.gif') no-repeat 3px 6px; }
+div#wrap div#container div#sidebar div#newlist ul li.idea { background: #e2f4f8 url('/themes/default/images/ideas.gif') no-repeat 3px 6px; }
+div#wrap div#container div#sidebar div#newlist ul li.problema { background: #e2f4f8 url('/themes/default/images/problemas.gif') no-repeat 3px 6px; }
+div#wrap div#container div#sidebar div#newlist ul li a { text-decoration: none; color: #333; font-weight: 700; font-size: 13px; }
+div#wrap div#container div#sidebar div#newlist ul li a:hover { text-decoration: underline; }
+
+div#wrap div#container div#sidebar div#tagcloud { /* clear: both; padding: 2.5em 20px 0 0; */ }
+div#wrap div#container div#sidebar div#tagcloud a.s4 { font-size: 179%; }
+div#wrap div#container div#sidebar div#tagcloud a.s3 { font-size: 155%; }
+div#wrap div#container div#sidebar div#tagcloud a.s2 { font-size: 121%; }
+div#wrap div#container div#sidebar div#tagcloud a { font-size: 90%; }
+
+div#wrap div#container div#sidebar ul#products { list-style-type: none; }
+div#wrap div#container div#sidebar ul#products li { float: left; margin: 5px 15px 0 0; }
+div#wrap div#container div#sidebar ul#products li a { display: block; background-color: white; border: 2px solid #ccc; height: 100px; padding: 5px; width: 120px; outline: 0; }
+div#wrap div#container div#sidebar ul#products li a:hover { border-color: #b1b1b1; }
+div#wrap div#container div#sidebar ul#products li a.active { border-color: #195190; background-color: #195190; }
+div#wrap div#container div#sidebar ul#products li a img { border: 0; background-color: white; }
+
+div#wrap div#container div#about { clear: both; border-top: 3px solid #666; padding: 10px; }
+div#wrap div#container div#about div#about-info { float: left; width: 75%; border-right: 1px dotted #999; }
+div#wrap div#container div#about div#about-info h3 { color: #40454f; font-size: 1.2em; margin-bottom: 10px; }
+div#wrap div#container div#about div#about-info p { margin-bottom: 5px; }
+div#wrap div#container div#about div#about-links { width: 20%; padding: 10px 0; float: right; }
+div#wrap div#container div#about div#about-links ul { list-style-type: square; }
+div#wrap div#container div#about div#about-links ul li { padding: 2px 0; }
+
+div#footer { text-align: left; margin: 0 auto; width: 960px; }
+div#footer p { font-size: 80%; padding-top: 9px; margin-left: 16px; font-weight: 700; color: #666; }

@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^(.*)/agregar/(.*)$ /temas-agregar.php?id=$1&style=$2 [NC]
+RewriteRule ^(.*)/agregar$ /temas-agregar.php?id=$1 [NC]
