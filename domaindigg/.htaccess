@@ -1,0 +1,34 @@
+<Files "config.php">
+  Order Allow,Deny
+  Deny from All
+</Files>
+
+<Files "common.php">
+  Order Allow,Deny
+  Deny from All
+</Files>
+
+RewriteEngine on
+
+RewriteRule ^captcha/?$ captcha.php [QSA,L]
+
+RewriteRule ^signup/?$ signup.php [QSA,L]
+RewriteRule ^signin/?$ signin.php [QSA,L]
+RewriteRule ^signin/restore/?$ restore.php [QSA,L]
+RewriteRule ^signout/?$ signout.php [QSA,L]
+
+RewriteRule ^tos/?$ tos.php [QSA,L]
+RewriteRule ^about/?$ about.php [QSA,L]
+RewriteRule ^contact/?$ contact.php [QSA,L]
+
+RewriteRule ^tlds/?$ tlds.php [QSA,L]
+RewriteRule ^tlds/suggest/?$ tldssuggest.php [QSA,L]
+
+RewriteRule ^dd/?$ dd.php [QSA,L]
+RewriteRule ^dd/projects/?$ ddprojects.php [QSA,L]
+RewriteRule ^dd/projects/page([0-9]+)/?$ ddprojects.php?page=$1 [QSA,L]
+RewriteRule ^dd/projects/add/?$ ddprojectsadd.php [QSA,L]
+RewriteRule ^dd/projects/([0-9]+)/?$ ddprojectsview.php?pid=$1 [QSA,L]
+RewriteRule ^dd/projects/([0-9]+)/access/?$ ddprojectsaccess.php?pid=$1 [QSA,L]
+RewriteRule ^dd/projects/([0-9]+)/edit/?$ ddprojectsedit.php?pid=$1 [QSA,L]
+RewriteRule ^dd/projects/([0-9]+)/delete/?$ ddprojectsdelete.php?pid=$1 [QSA,L]

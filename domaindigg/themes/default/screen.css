@@ -1,0 +1,106 @@
+
+body, * { margin: 0; padding: 0; }
+body { line-height: 1.5; font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif; font-size: 14px; background-color: #999; text-align: center; }
+
+div#wrap { margin: 0 auto; padding: 0 5px; width: 960px; background-image: url('images/bg.gif'); background-repeat: repeat-y; background-color: #f9f9f9; text-align: left; }
+div#wrapbottom { margin: 0 auto; padding: 0 5px; width: 960px; height: 5px; background-image: url('images/bgbottom.gif'); background-repeat: repeat-y; text-align: left; }
+
+div#wrap a { outline: 0; }
+div#wrap a img { border: 0; }
+
+div#wrap div#header { background-color: #3c3c3c; }
+div#wrap div#header h1 {}
+div#wrap div#header h1 a { display: block; width: 228px; height: 60px; background-image: url('images/logo.gif'); background-repeat: no-repeat; text-indent: -999px; }
+
+div#wrap div#content { background-image: url('images/bgcontent.gif'); background-repeat: repeat-x; background-color: #fff; padding: 30px; }
+
+div#wrap div#content a { color: #105CB6; border-bottom: 1px solid #105CB6; text-decoration: none; }
+div#wrap div#content a:hover { color: #000033; }
+div#wrap div#content a:active { color: #000; }
+
+div#wrap div#content p { padding: 3px 0; }
+div#wrap div#content p.info { font-size: 12px; color: #777; padding: 10px; }
+
+div#wrap div#content h2 {}
+div#wrap div#content h3 { margin-top: 14px; font-family: Tahoma, Arial, sans-serif;  }
+
+div#wrap div#content form {}
+div#wrap div#content form textarea,
+div#wrap div#content form input { font-size: 15px; font-weight: 700; padding: 3px; }
+div#wrap div#content form input.checkbox { position: relative; top: 2px; }
+div#wrap div#content form dl { padding: 5px 0; }
+div#wrap div#content form dl dt { float: left; width: 140px; padding-top: 4px; }
+div#wrap div#content form dl dt span.required { color: red; font-size: 17px; }
+div#wrap div#content form dl dd { margin-left: 150px; margin-bottom: 2px; }
+
+div#wrap div#content form dl dd.radio {}
+div#wrap div#content form dl dd.radio input { margin: 0 0 0 4px; position: relative; top: 2px; cursor: pointer; }
+div#wrap div#content form dl dd.radio label { cursor: pointer; }
+
+div#wrap div#content form div.captcha { text-align: center; width: 180px; font-size: 10px; background-color: #f9f9f9; border: 1px solid #ccc; color: #333; padding: 10px 5px; float: right; }
+div#wrap div#content form div.captcha p { padding: 1px; }
+
+div#wrap div#content div.list {}
+div#wrap div#content div.list ul { list-style-type: none; }
+div#wrap div#content div.list ul li { padding: 5px 10px; margin-bottom: 2px; background-color: #fff; }
+div#wrap div#content div.list ul li.odd {}
+div#wrap div#content div.list ul li.even {}
+div#wrap div#content div.list ul li label { cursor: pointer; }
+
+div#wrap div#content div.box { width: 49%; float: left; }
+div#wrap div#content div.box ul { list-style-type: none; }
+div#wrap div#content div.box ul li { padding: 5px; padding-left: 22px; background-image: url('images/bullet-red.gif'); background-repeat: no-repeat; background-position: 4px center; }
+div#wrap div#content div.box ul li.odd { background-color: #d2e0e6; color: #528ce0; }
+div#wrap div#content div.box ul li.even {}
+div#wrap div#content div.box ul li div.actions { display: none; }
+
+div#wrap div#content div.box ul li.own { background-image: url('images/bullet-blue.gif'); }
+div#wrap div#content div.box ul li.own div.actions { float: right; }
+div#wrap div#content div.box ul li.own div.actions a { float: left; display: block; margin-right: 0.3em; margin-top: 0.2em; }
+div#wrap div#content div.box ul li.own div.actions a span { display: none; }
+div#wrap div#content div.box ul li.own > div.actions { display: none; }
+div#wrap div#content div.box ul li.own:hover > div.actions { display: block; }
+
+div#wrap div#content div.box p.footer { text-align: right; font-size: 13px; }
+
+div#wrap div#content table { width: 100%; }
+div#wrap div#content table tr td,
+div#wrap div#content table tr th { padding: 5px 8px; font-size: 14px; }
+div#wrap div#content table tr .right { text-align: right; }
+div#wrap div#content table tr .center { text-align: center; vertical-align: middle; }
+div#wrap div#content table tr .center img { position: relative; top: 2px; }
+div#wrap div#content table tr td.actions a { padding: 2px 2px 2px 20px; background-position: 2px; font-size: 13px; }
+div#wrap div#content table tr td.actions a.delete { color: #f00; border: 0; }
+div#wrap div#content table tr td.actions a:hover.delete { background-color: #f00; color: #fff; }
+
+div#wrap div#content table thead tr { height: 35px; font-size: 12px; font-weight: 700; }
+div#wrap div#content table tbody tr.odd { background-color: #d2e0e6; color: #528ce0; }
+div#wrap div#content table tfoot tr { background-color: #d0c8c8; }
+
+div#wrap div#content .pagination {}
+div#wrap div#content .pagination span,
+div#wrap div#content .pagination a { background-color: #fff; border: 1px solid #fff; display: block; float: left; margin-right: 0.1em; padding: 0.2em 0.5em; font-size: 11px; }
+div#wrap div#content .pagination a { border: 1px solid #9aafe5; text-decoration: none; }
+div#wrap div#content .pagination a:hover { border-color: #2e6ab1; }
+div#wrap div#content .pagination span.current { background-color: #2e6ab1; border: 1px solid #2e6ab1; color: #fff; }
+div#wrap div#content .pagination span.disabled { border: 1px solid #ddd; color: #999;}
+
+div#wrap div#content div.notices { background-color: #FFAD34; margin: 0 -30px; padding: 10px 20px; }
+div#wrap div#content div.notices p.hide { float: right; }
+div#wrap div#content div.notices ul { list-style-type: none; }
+div#wrap div#content div.notices ul li {}
+div#wrap div#content div.notices ul li a {}
+div#wrap div#content div.notices ul li span { font-size: 90%; }
+
+div#wrap div#content a.access { background-image: url('images/access.gif'); background-repeat: no-repeat; width: 16px; height: 16px; border: 0; }
+div#wrap div#content a.edit { background-image: url('images/edit.gif'); background-repeat: no-repeat; width: 16px; height: 16px; border: 0; }
+div#wrap div#content a.delete { background-image: url('images/delete.gif'); background-repeat: no-repeat; width: 16px; height: 16px; border: 0; }
+
+div#wrap div#content span.domain { background-color: lightblue; padding: 1px 2px; }
+div#wrap div#content span.big { font-size: 110%; }
+div#wrap div#content span.small { font-size: 90%; }
+
+div#wrap div#content div.clear { clear: both; }
+
+div#wrap div#footer { font-size: 12px; text-align: center; padding: 10px; color: #999; background-color: #333; }
+div#wrap div#footer a { font-size: 12px; color: #999; }
