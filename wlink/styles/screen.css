@@ -1,0 +1,32 @@
+body, * { margin: 0; padding: 0; }
+body { font-family: "Lucida Grande", verdana; font-size: 12px; text-align: center; }
+
+a { color: #3B5998; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+form { }
+form label { font-size: 13px; }
+form input, form select { font-size: 14px; font-weight: bold; padding: 5px; }
+form select option { padding-right: 30px; }
+form input.submit { }
+
+form dl dd { margin-top: 5px; }
+
+table { font-size: 12px; width: 100%; }
+table thead tr th { line-height: 14px; border-bottom: 1px solid #C7CFE0; padding: 3px; }
+table tbody tr td { line-height: 14px; border-bottom: 1px solid #E2E6EF; padding: 3px; background-color: #F7F7F7; }
+table tbody tr td.buddy { background: url('/images/contactos.gif') no-repeat 0 -4px; }
+table tbody tr td.meetinperson { background-position: 0 -123px; }
+
+div#wrap { width: 800px; margin: 0 auto; text-align: left; padding: 10px; }
+div#wrap div#left { float: left; width: 190px; }
+div#wrap div#right { float: left; width: 580px; border: 1px solid #D9DFEA; padding: 10px; }
+
+div#wrap ul#menu {  }
+div#wrap ul#menu li { list-style-type: none; }
+div#wrap ul#menu li a { display: block; padding: 6px; text-decoration: none; background-color: #3B5998; color: #C3CDDF; border-right: 1px solid #D9DFEA; }
+div#wrap ul#menu li.active a, div#wrap ul#menu li a:hover { color: #FFF; border-right: 5px solid #D9DFEA; }
+
+div#wrap div#graph { overflow: auto; }
+
+div#wrap div.clear { clear: both; }
