@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<info modified="2007-11-27">
+  <points>350</points>
+</info>
