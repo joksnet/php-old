@@ -1,0 +1,64 @@
+body { font-family: Verdana, Helvetica, Verdana, Arial, sans-serif; font-size: 12px; color: #444; background: url('/images/bg.gif') repeat-y; margin: 0; }
+
+a { color: #5a7fe0; outline: 0; }
+a:hover { color: #999; background-color: #ff0; }
+a:active { text-decoration: none; }
+a img { border: 0; }
+a.letter { text-transform: uppercase; }
+
+h1 { font-size: 160%; margin-top: 0; }
+h2 { font-size: 120%; }
+h3 { font-size: 105%; }
+
+big { font-size: 1.5em; }
+big.red { color: red; }
+
+span.new { color: #c24c4c; }
+
+table { border-left: 1px solid #cedbff; border-right: 1px solid #cedbff; }
+table thead tr th { font-size: 12px; border-bottom: 1px solid #cedbff; border-top: 1px solid #cedbff; padding: 6px 6px 6px 12px; text-align: left; }
+table tbody tr td { font-size: 12px; border-bottom: 1px solid #cedbff; padding: 6px 6px 6px 12px; }
+table tbody tr.alt td { background-color: #f2f5fd; }
+table tbody tr td.center { text-align: center; }
+
+dl {}
+dl dt { float: left; width: 80px; text-align: right; }
+dl dt label { color: #666; font-size: 11px; position: relative; top: 2px; }
+dl dd { margin: 0 0 6px 90px; }
+
+div#sidebar { /* background-color: #f2f5fd; */ float: left; width: 130px; padding: 15px; padding-bottom: 0; }
+div#sidebar div.box { margin-bottom: 12px; }
+div#sidebar div.box ul { list-style-type: none; margin: 2px 0 0 0; padding: 0; }
+div#sidebar div.box ul li { margin: 1px 0 0 0; overflow: hidden; white-space: nowrap; width: 130px; }
+
+div#widebar { /* border-left: 1px solid #658cf0; */ margin-left: 160px; padding: 15px; }
+
+div.tabs { border: 1px solid #ccc; margin-top: 30px; }
+div.tabs ul { list-style-type: none; }
+div.tabs ul li { display: inline; padding: 5px; border: 1px solid #ccc; height: 25px; margin: -26px 10px 10px 0; }
+div.tabs ul li.active { border-bottom-color: white; }
+
+div.tabs > ul { margin: -20px 0 15px 0; }
+div.tabs > ul li { margin-right: 5px; }
+
+div#css { margin: 10px 15px; }
+
+div.default span, div.default div.web { height: 20px; line-height: 20px; }
+div.default span label { display: block; color: #666; float: left; width: 24px; font-size: 90%; }
+div.default div.avatar { display: none; }
+div.default div.info { margin-bottom: 5px; }
+div.default div.info span.nombre { font-weight: 700; }
+div.default div.info span.empresa { display: block; }
+div.default div.info span.email { display: block; }
+
+div.bundle div.inner { float: left; background-color: #f4f2eb; border: 1px solid #dbd5c5; padding: 5px; width: 278px; height: 165px; }
+div.bundle div.clear { clear: left; }
+div.bundle a { border-bottom: 1px solid #dbd5c5; text-decoration: none; color: #326ea1; }
+div.bundle a:hover { color: #383d44; background-color: #f4f2eb; }
+div.bundle span, div.bundle div.web { height: 20px; line-height: 20px; }
+div.bundle span label { display: block; color: #666; float: left; width: 24px; font-size: 90%; }
+div.bundle div.avatar { float: left; margin: 0 10px 0 0; }
+div.bundle div.info { float: left; }
+div.bundle div.info span { display: block; }
+div.bundle div.info span.nombre { font-weight: 700; }
+div.bundle div.address { padding-top: 85px; }

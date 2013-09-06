@@ -1,0 +1,17 @@
+RewriteEngine on
+
+RewriteRule ^(\d+).png$ /email.php?t=$1 [NC]
+RewriteRule ^t/(\d+).html$ /tarjeta.php?t=$1 [NC]
+RewriteRule ^r/(\d+).html$ /reportar.php?t=$1 [NC]
+RewriteRule ^v/(\d+).html$ /vcard.php?t=$1 [NC]
+
+RewriteRule ^l/n/(.).html$ /listar.php?por=nombre&letra=$1 [NC]
+RewriteRule ^l/e/(.).html$ /listar.php?por=empresa&letra=$1 [NC]
+RewriteRule ^l/(.).html$ /listar.php?letra=$1 [NC]
+
+RewriteRule ^b/n/(.+).html$ /listar.php?por=nombre&buscar=$1 [NC]
+RewriteRule ^b/e/(.+).html$ /listar.php?por=empresa&buscar=$1 [NC]
+RewriteRule ^b/(.+).html$ /listar.php?buscar=$1 [NC]
+
+RewriteRule ^style.html$ /style.php [NC]
+RewriteRule ^index.html$ /index.php [NC]
