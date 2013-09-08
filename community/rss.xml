@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- generator="FeedCreator 1.7.2" -->
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://joksnet.homelinux.org/community/rss.xml">
+        <title>Freaks Community</title>
+        <description>(...)</description>
+        <link>http://joksnet.homelinux.org/community</link>
+       <dc:date>2006-05-03T13:38:17-03:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=11"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=10"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=8"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=7"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=5"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=4"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=3"/>
+                <rdf:li rdf:resource="http://joksnet.homelinux.org/community/?id_posts=1"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=11">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Juan Manuel Martinez</dc:creator>
+        <title>Freaks Community</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=11</link>
+        <description>&lt;p&gt;Bueno, aqui dejo &lt;a href=&quot;upload/community.tar.gz&quot;&gt;The Source&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=10">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Leonardo Cantelmo</dc:creator>
+        <title>Numero de versiones de Ubuntu Linux</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=10</link>
+        <description>&lt;p&gt;
+Despues de haberme preguntado durante meses y meses que representaban los numeros de version de los distintos releases de ubuntu, me di cuenta que ademas de preguntarmelo iba a tener que ponerme a pensar un poquito para resolverlo.
+&lt;/p&gt;
+&lt;p&gt;
+Si bien el asunto no es muy complicado (de hecho es bastante sencillo), mi primer acercamiento fue pensar en las versiones anteriores, y note que venian siendo: 5.04, 5.10, 6.04, lo que me daba sospechas de que la proxima fuera 6.10. Bueno, esto parecia cierto hasta hace mas o menos un mes, cuando decidieron retrasar la fecha de release de Dapper (proxima version de ubuntu).
+&lt;/p&gt;
+&lt;p&gt;
+Dapper ha sido pospuesta dos meses (de abril a junio de 06)
+Lo que encontramos ahora, es que la nueva version pareceria ser la 6.06, con lo cual se rompia el esquema anterior. Bueno, esto aclara un poco las cosas.
+Los numeros de version estan directamente relacionados con la fecha de release. Esta version esta prevista para salir en el a&amp;ntilde;o  2006 (major == 6) y en el mes 06 (minor == 06). Por lo tanto, lo que parecia tan misterioso (al menos para mi) resulta bastante sencillo, obvio y simpatico.
+&lt;/p&gt;
+&lt;p&gt;
+Probablemente hubiera sido mas facil buscar el significado en google o en la misma web de ububtu, pero bueno... asi fueron las cosas, y asi seguiran siendo.
+&lt;/p&gt;
+&lt;p&gt;
+Saludos a todos los freaks! y hasta la proxima.
+&lt;/p&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=8">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Ignacio Soubelet</dc:creator>
+        <title>Sistemas Distribuidos - entrega 1</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=8</link>
+        <description>&lt;p&gt;Si quisiera hablar de la programaci&amp;oacute;n distribuida en general, remont&amp;aacute;ndome a su historia, sus usos y dem&amp;aacute;s, quiz&amp;aacute;s deba quedarme escribiendo durante d&amp;iacute;as un Post que (mas o menos) cubra la mayor parte de los aspectos (e interpretaciones) de la misma. Aun as&amp;iacute;, no asegurar&amp;iacute;a a los lectores que la informaci&amp;oacute;n que diera fuera toda la existente... (adem&amp;aacute;s se dormir&amp;iacute;an luego de leer cuatro o cinco l&amp;iacute;neas).&lt;/p&gt;
+&lt;p&gt;Es por eso que decid&amp;iacute; enfocarme en un uso mas que interesante de la &quot;computaci&amp;oacute;n distribuida&quot; llamada Servicios.&lt;/p&gt;
+&lt;p&gt;En este primer Post (y quiz&amp;aacute;s en el siguiente tambi&amp;eacute;n) voy a intentar dar un Overview del tema, sin mencionar herramientas ni implementaciones de c&amp;oacute;digo (que pueden confundir). Por eso el tema lo tratare a nivel de arquitectura.&lt;/p&gt;
+&lt;p&gt;La parte acad&amp;eacute;mica de la computaci&amp;oacute;n distribuida no la tratare, ya que para eso deber&amp;iacute;a transcribir alg&amp;oacute;n libro (si si, de esos que te recomiendan en la facultad), y me odiar&amp;iacute;an al segundo Post, as&amp;iacute; que solo la mencionare cuando necesite sustentar una afirmaci&amp;oacute;n por alguna teor&amp;iacute;a.&lt;/p&gt;
+&lt;h2&gt;Comenzando&lt;/h2&gt;
+&lt;p&gt;Si nos ponemos a pensar que rol cumplen los dispositivos que nos rodean (Pc, impresora, tel&amp;eacute;fono... etc) nos dar&amp;iacute;amos cuenta que nos prestan un servicio. Un servicio que nosotros identificamos por la funci&amp;oacute;n que nos permite realizar.&lt;/p&gt;
+&lt;p&gt;Ahora bien, &lt;i&gt;quien &quot;consume&quot; este servicio?&lt;/i&gt;, bien, somos nosotros, las personas, es decir, un acotado espectro de entidades que componen el ecosistema.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Porque afirmo esto?&lt;/i&gt;. Porque podr&amp;iacute;amos permitirnos pensar que cualquier dispositivo &quot;desearia&quot; usar el servicio que presta otro. Cualquier dispositivo que forma este ecosistema deber&amp;iacute;a interactuar con otros. Si siguiera el ejemplo trivial anterior; porque una impresora no puede usar el tel&amp;eacute;fono???. Obviamente no querr&amp;aacute; usarlo para lo mismo que nosotros (hablar), pero si quiz&amp;aacute;s para enviar  y recibir informaci&amp;oacute;n por GPRS.&lt;/p&gt;
+&lt;p&gt;Ahora bien, alguien pens&amp;oacute; esto alguna vez, y llego a la conclusi&amp;oacute;n de &lt;i&gt;all-in-one&lt;/i&gt;. Incorporar la mayor cantidad de funcionalidades dentro de un solo dispositivo. Claro, esto es posible cuando existe alguna relaci&amp;oacute;n entre las capacidades de un dispositivo. Pero... &lt;i&gt;alg&amp;uacute;n fabricante de impresoras pondr&amp;iacute;a la capacidad de transmitir GPRS por dicho dispositivo..???&lt;/i&gt; &lt;b&gt;Improbable.&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;As&amp;iacute; nace la idea de que los dispositivos puedan prestar un servicio a cualquier entidad del ecosistema (o ambiente) donde estos se mueven.&lt;/p&gt;
+&lt;p&gt;La interactividad de estos dispositivos permite realizar una tarea colaborativa entre los mismos, es decir, si A presta una servicio y B lo necesita, &lt;i&gt;porque debemos limitarnos a pensar que A y B no puedan entablar un enlace y B utilizar la funcionalidad de A?&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;En sistemas inform&amp;aacute;ticos esto es posible (hasta dir&amp;iacute;a trivial), pero claro, pensemos que dos PC's son de la misma especie en nuestro ecosistema, con lo cual no es exagerado pensar que la comunicaci&amp;oacute;n entre ellos sea casi natural.&lt;/p&gt;
+&lt;p&gt;Todas las comunicaciones que se han logrado, han sido &lt;i&gt;fabricadas&lt;/i&gt; especialmente. Es decir para el caso en que A deba comunicarse con B. Pero cuando aparezca C que necesite A, nuevamente deber&amp;iacute;amos compatibilizar a C para que entienda a A y ni que hablar si requiere de B.&lt;/p&gt;
+&lt;p&gt;Este ecosistema es dif&amp;iacute;cil de mantener y desarrollar, pues los dispositivos que a el ingresan no se adaptan al cambio, no hablan un lenguaje com&amp;uacute;n.&lt;/p&gt;
+&lt;p&gt;Entonces comienza el problema del aislamiento, un dispositivo cumple su funci&amp;oacute;n y se encierra en si mismo, la &amp;uacute;nica interfaz que expone hacia fuera, es decir, a la &amp;uacute;nica entidad que le es permitido usarlo es a aquella para la que se ha desarrollado (si existiera , por supuesto). Nuevamente demasiado acotado.&lt;/p&gt;
+&lt;p&gt;As&amp;iacute; expuesto da que pensar que todo esto es muy f&amp;aacute;cil. Bien, no lo es, y de hecho, es sumamente complejo.&lt;/p&gt;
+&lt;p&gt;Cuando uno piensa en este tipo de ecosistema se encuentra que hay puntos muy marcados a resolver. Estos puntos son los que dar&amp;iacute;n tema a mis pr&amp;oacute;ximos Posteos.&lt;br /&gt;
+Ellos son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El problema de la comunicaci&amp;oacute;n, como dos dispositivos entablan una comunicaci&amp;oacute;n, que medio f&amp;iacute;sico aplican.&lt;/li&gt;
+&lt;li&gt;Como un dispositivo expone su funcionalidad, y como otro puede invocarla &lt;/li&gt;
+&lt;li&gt;Que tipo de comunicaci&amp;oacute;n pueden entablar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No son las &amp;uacute;nicas cosas a tratar, hay mas y mas complejas, pero estas son las b&amp;aacute;sicas, y sin ellas construidas, no podr&amp;iacute;amos hablar del resto.&lt;/p&gt;
+&lt;p&gt;&gt;&gt; Pronto tendr&amp;eacute; la parte 2....&lt;/p&gt;
+</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=7">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Juan Manuel Martinez</dc:creator>
+        <title>PHP Games</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=7</link>
+        <description>&lt;p&gt;Ya que mi objetivo era hablar sobre PHP, aca les dejo un link muy interesante para probar con juegos en PHP, y algunos con PHP+GTK2:&lt;/p&gt;
+&lt;a href=&quot;http://blinduser.blogspot.com/2006/04/php-games.html&quot;&gt;http://blinduser.blogspot.com/2006/04/php-games.html&lt;/a&gt;
+
+&lt;p&gt;Saludos,&lt;/p&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=5">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Juan Manuel Martinez</dc:creator>
+        <title>Freak</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=5</link>
+        <description>&lt;p&gt;Perdon por el off-topic, pero no podia dejar de mostrar esto al mundo. Alguna vez estuvieron unidos:&lt;/p&gt;
+&lt;a href=&quot;http://joksnet.homelinux.org/community/upload/cimg0297_orig.jpg&quot;&gt;&lt;img src=&quot;http://joksnet.homelinux.org/community/upload/cimg0297_thumb.jpg&quot; alt=&quot;freak&quot; /&gt;&lt;/a&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=4">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Juan Manuel Martinez</dc:creator>
+        <title>Gracias joksnet...</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=4</link>
+        <description>&lt;blockquote&gt;&lt;p&gt;Gracias a todos por este premio, quisiera compartirlo con la gente que hizo posible esto, a mi familia. Gracias... (ya pasaron los 30 secs ?)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Hablando en serio, espero que este sitio cumpla con cosas basicas entre los &lt;em&gt;geeks&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Beautiful is better than ugly.&lt;/li&gt;
+    &lt;li&gt;Simple is better than complex.&lt;/li&gt;
+    &lt;li&gt;Complex is better than complicated.&lt;/li&gt;
+    &lt;li&gt;Now is better than never.&lt;/li&gt;
+    &lt;li&gt;Although never is often better than *right* now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Partes del texto del &lt;a href=&quot;http://www.python.org/dev/peps/pep-0020/&quot;&gt;PEP20 The Zen of Python&lt;/a&gt;. Saludos.&lt;/p&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=3">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Pablo Grigolatto</dc:creator>
+        <title>My First Post</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=3</link>
+        <description>&lt;p&gt;Muy buenos dias mundo! Luego de largas discuciones y plantea(miento)s, logramos pone
+os de acuerdo y aca estamos arrancando este proyecto. Ante todo vamos a saca
+os el sombrero ante nuestro camarada Joksnet que consumio 101 horas y 100101 tazas de cafe para levantar este blog.&lt;/p&gt;
+&lt;p&gt;Que les puedo decir? Pronto empezaremos a postear cosas utiles, asi que chequeen seguido la web. Un saludo para todos los freaks de ahi a la derecha, nos vemos!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;i&gt;&lt;center&gt;Existen 10 tipos de personas, las que entienden binario, y las que no&lt;center&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    <item rdf:about="http://joksnet.homelinux.org/community/?id_posts=1">
+        <dc:format>text/html</dc:format>
+        <dc:date>1970-01-01T00:00:00-03:00</dc:date>
+        <dc:source>http://joksnet.homelinux.org/community</dc:source>
+        <dc:creator>Leonardo Cantelmo</dc:creator>
+        <title>What a wonderful blog!!!</title>
+        <link>http://joksnet.homelinux.org/community/?id_posts=1</link>
+        <description>&lt;p&gt;
+Buenas a todos  :)
+&lt;/p&gt;
+&lt;p&gt;
+Antes que nada quiero felicitar al Señor joksnet (con S mayuscula) por la fantastica web que nos esta brindando. Espero poder publicar alguna que otra cosa interesante frecuentemente asi va creciendo de a poco nuestra community.
+&lt;/p&gt;
+&lt;p&gt;
+Bueno, por el momento no se me ocurre nada nuevo, asi que dense una vueltita cada tanto porque muy pronto estamos comenzando.
+&lt;/p&gt;
+&lt;p&gt;
+Aprovecho tambien y le mando saludos a los demas freaks colegas con los que compartimos la web.
+Saludos para todos!
+&lt;/p&gt;
+&lt;p&gt;
+telmux.
+&lt;/p&gt;</description>
+    </item>
+</rdf:RDF>
