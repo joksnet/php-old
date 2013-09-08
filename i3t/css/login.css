@@ -1,0 +1,21 @@
+def __path__ = /images
+
+div#wrap div#container-wrap div#container div#content form dl dt { float: left; }
+div#wrap div#container-wrap div#container div#content form dl dt label { display: block; width: 80px; text-align: right; white-space: nowrap; line-height: 22px; color: #414141; }
+div#wrap div#container-wrap div#container div#content form dl dd { margin-left: 85px; height: 26px; line-height: 24px; }
+div#wrap div#container-wrap div#container div#content form dl dd input { border: 1px solid #F2F2F2; border-top: 1px solid #DbDbDb; border-left: 1px solid #E0E0E0; background: #FFF url('__path__/input-bg.gif') repeat-x; padding: 3px; font-size: 11px; color: #555; }
+div#wrap div#container-wrap div#container div#content form dl dd input:focus { border: 1px solid #7FCCFF; border-right: 1px solid #B2E0FF; border-bottom: 1px solid #B2E0FF; background-position: 0 -20px; color: #202020; }
+div#wrap div#container-wrap div#container div#content form dl dd input.go { border-left: 4px solid #B2E0FF; }
+div#wrap div#container-wrap div#container div#content form dl dd input.go:focus { border-left-color: #7FCCFF; }
+
+div#wrap div#container-wrap div#head div#head-right div#page-title h3.login { background: transparent url('/@@/key/') no-repeat left center; }
+
+div#wrap div#container-wrap div#container div#content form dl dd div.checkbox { margin-top: 4px; height: 16px; width: 14px; background: transparent url('__path__/checkbox.gif') no-repeat; cursor: pointer; }
+div#wrap div#container-wrap div#container div#content form dl dd div.checkbox:hover { background-position: 0 -16px; }
+div#wrap div#container-wrap div#container div#content form dl dd div.checked { background-position: 0 -32px; }
+div#wrap div#container-wrap div#container div#content form dl dd div.checked:hover { background-position: 0 -48px; }
+
+div#wrap div#container-wrap div#container div#content form dl dd a.submit { display: block; float: left; height: 22px; text-decoration: none; background: transparent url('__path__/submit.gif') no-repeat top left; cursor: pointer; }
+div#wrap div#container-wrap div#container div#content form dl dd a.submit span { display: block; margin: 0 0 0 5px; padding: 0 10px 0 6px; color: #619DE9; line-height: 22px; background: transparent url('__path__/submit.gif') no-repeat top right; }
+div#wrap div#container-wrap div#container div#content form dl dd a.submit:hover { background-position: bottom left; }
+div#wrap div#container-wrap div#container div#content form dl dd a.submit:hover span { background-position: bottom right; color: #3985E3; }

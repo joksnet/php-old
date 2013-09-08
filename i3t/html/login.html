@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>i3t :: login</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="/+/" type="text/css" media="screen" />
+  <script type="text/javascript" src="/*/jquery/"></script>
+  <script type="text/javascript" src="/*/i3t/"></script>
+  <script type="text/javascript" src="/*/i3t.login/"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="container-wrap">
+      <div id="head">
+        <div id="logo"><h1>i3t</h1></div>
+        <div id="head-right">
+          <div id="nav">
+            <ul>
+              <li><a href="/" class="selected"><span>login</span></a></li>
+            </ul>
+          </div>
+          <div id="page-title">
+            <h3 class="login">login</h3>
+          </div>
+        </div>
+        <div class="both"><!-- --></div>
+      </div>
+      <div id="container">
+        <div id="sidebar"><!-- --></div>
+        <div id="content" class="login">
+          <form id="frm" action="/api/login/" method="post">
+            <dl>
+              <dt><label for="username">username</label></dt>
+              <dd><input type="text" id="username" name="username" maxlength="18" /></dd>
+
+              <dt><label for="password">password</label></dt>
+              <dd><input type="password" id="password" name="password" maxlength="32" /></dd>
+
+              <dt><label for="view">view only</label></dt>
+              <dd><div class="checkbox"><input type="hidden" id="view" name="view" value="0" /></div></dd>
+
+              <dd><a class="submit" accesskey="s" href="#login"><span>login</span></a></dd>
+            </dl>
+          </form>
+        </div>
+        <div class="both"><!-- --></div>
+      </div>
+      <div id="foot">
+        <div id="foot-bar">
+          <div id="foot-content">
+            <ul>
+              <li id="ip"><!-- --></li>
+              <li>Copyright 2007 <a href="http://bundleweb.com.ar">Bundle Software</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
