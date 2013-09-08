@@ -1,0 +1,7 @@
+body, * { font-family: Fixed, monospace; font-size: 11px; }
+body a { text-decoration: none; }
+body h1, body h1 span { font-size: 12px; font-weight: 500; }
+body input { background-color: white; border: 0; }
+body div.mail span { white-space: pre; }
+body div.mail abbr { border: 0; }
+body div.unread { font-weight: 700; }
