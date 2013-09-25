@@ -1,0 +1,19 @@
+Worthalter Link
+===============
+
+This script was created to create a net of connection of Worthalter around the
+year 2007. It has two methods, one is the old GD library to create an image
+with a custom algorithm and the other is to use graphviz.
+
+Database
+--------
+
+When I found it in 2013 there wasn't a schema file, so I recreated with the
+insert in the code. The new schema directory contains a mysql workbench and
+a sql file.
+
+Deprecations
+------------
+
+It uses the old mysql extension, and in new systems a deprecation warning is
+raised. Also, there are some pass-by-reference.

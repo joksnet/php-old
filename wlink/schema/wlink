@@ -1,0 +1,90 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+DROP SCHEMA IF EXISTS `wlink` ;
+CREATE SCHEMA IF NOT EXISTS `wlink` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `wlink` ;
+
+-- -----------------------------------------------------
+-- Table `wlink`.`users`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `wlink`.`users` ;
+
+CREATE TABLE IF NOT EXISTS `wlink`.`users` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`user_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+
+CREATE UNIQUE INDEX `user_id_UNIQUE` ON `wlink`.`users` (`user_id` ASC);
+
+
+-- -----------------------------------------------------
+-- Table `wlink`.`contactos`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `wlink`.`contactos` ;
+
+CREATE TABLE IF NOT EXISTS `wlink`.`contactos` (
+  `contacto_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `empresa` VARCHAR(45) NULL,
+  `meet_in_person` TINYINT(1) NULL,
+  PRIMARY KEY (`contacto_id`),
+  CONSTRAINT `fk_contactos_1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `wlink`.`users` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+
+CREATE UNIQUE INDEX `user_id_UNIQUE` ON `wlink`.`contactos` (`contacto_id` ASC);
+
+CREATE INDEX `fk_contactos_1_idx` ON `wlink`.`contactos` (`user_id` ASC);
+
+
+-- -----------------------------------------------------
+-- Table `wlink`.`relaciones`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `wlink`.`relaciones` ;
+
+CREATE TABLE IF NOT EXISTS `wlink`.`relaciones` (
+  `contacto_id_left` INT NOT NULL,
+  `contacto_id_right` INT NOT NULL,
+  PRIMARY KEY (`contacto_id_left`, `contacto_id_right`),
+  CONSTRAINT `fk_relaciones_1`
+    FOREIGN KEY (`contacto_id_left`)
+    REFERENCES `wlink`.`contactos` (`contacto_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_relaciones_2`
+    FOREIGN KEY (`contacto_id_right`)
+    REFERENCES `wlink`.`contactos` (`contacto_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+
+CREATE INDEX `fk_relaciones_2_idx` ON `wlink`.`relaciones` (`contacto_id_right` ASC);
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `wlink`.`users`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `wlink`;
+INSERT INTO `wlink`.`users` (`user_id`, `username`, `password`) VALUES (NULL, 'worthalter', 'ar668');
+
+COMMIT;
+
