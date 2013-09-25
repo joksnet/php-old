@@ -1,0 +1,53 @@
+PHP Scripts
+===========
+
+This is a series of projects founded in an old backup. There are mostly
+garbage, but I leave them here to see how bad I was when I was a newbie.
+
+List
+----
+
+Battle:
+    The ethernal idea of code wars.
+CDIV:
+    404 database. CDIV is 404 in roman numbers.
+Community:
+    Multi person blog system.
+Coupon:
+    System based on the "dev" ORM. The admin is functional.
+Desktop:
+    File listing a la Apache.
+dev:
+    Trying to do an ORM.
+DomainDigg:
+    Un lugar en donde la gente puede votar dominios para un nuevo proyecto.
+ElTarjetero:
+    Un espacio publico para que la gente deje sus tarjetas de presentacion.
+EME:
+    Idea of CMS based on Standard8.
+Framework:
+    Very old idea of a framework. This will become Aix Framework one day.
+gt:
+    GMail in text mode only.
+i3t:
+    Used for recording enter/exit time of employees.
+Image:
+    GD wrapper that I used quite a lot.
+jObjects:
+    Idea of using PHP objects from JavaScript.
+Mappy:
+    Very simple example of the use of the Mappy API.
+OAuth:
+    My OAuth library. Never really good, but it did it's job.
+RentNow:
+    Multiple individual sites for properties, with a central listing.
+SoporteBinario:
+    Help desk web application that never evolved more than it's design.
+Standard8:
+    Initally intended as a CRM, was a test of creating HTML from PHP objects.
+SubAVI:
+    Clon of SubDivX that treats each file as unique.
+TwCensus:
+    Example using Mappy API to register the location of Twitter users.
+Wlink:
+    Graphical relation between contacts.
