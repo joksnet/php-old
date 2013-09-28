@@ -51,3 +51,8 @@ TwCensus:
     Example using Mappy API to register the location of Twitter users.
 Wlink:
     Graphical relation between contacts.
+
+License
+-------
+
+All code here is under the WTFPL unless is explicitly said contrary.
